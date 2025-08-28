@@ -205,6 +205,60 @@
 
 <p>華麗的兵器多半是為了<strong>造型或展示</strong>，真正要保命，講的是<strong>實用與掌控</strong>。</p>
 
+<h2>📊 六、武器「帥氣 vs 實用性」對比圖</h2>
+<canvas id="weaponRadarChart" width="400" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('weaponRadarChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['匕首', '三節棍', '雙節棍', '長槍', '單手戰斧', '流星錘', '短劍', '月牙鏟', '青龍偃月刀'],
+            datasets: [
+                {
+                    label: '實用性',
+                    data: [9, 2, 3, 6, 8, 3, 8, 2, 3],
+                    backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    borderWidth: 2
+                },
+                {
+                    label: '視覺帥度',
+                    data: [4, 9, 10, 7, 6, 10, 5, 8, 10],
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2
+                }
+            ]
+        },
+        options: {
+            scales: {
+                r: {
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    pointLabels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: '好看 vs 好用：常見兵器的雙面評價'
+                },
+                legend: {
+                    position: 'top'
+                }
+            }
+        }
+    });
+</script>
+
+
 <h2>✅ 總結</h2>
 
 <blockquote>
