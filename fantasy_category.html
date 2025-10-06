@@ -101,7 +101,11 @@
     <p>在本頁中，我為大家整理了一份關於奇幻作品世界觀分類的比較表格，旨在幫助讀者更清楚地了解不同類型的奇幻世界觀。奇幻作品的世界觀設計差異大，有些是完全架空的虛構世界，有些則是基於現實世界加入奇幻元素。通過這樣的分類標準，我們可以對各種作品的背景、設定、超自然元素等進行更細緻的區分與分析。</p>
     <p>這些作品跨足了文學、電影、電視劇、電子遊戲等多個領域，無論是建立全新世界的高奇幻作品，還是將現實與奇幻結合的都市奇幻作品，都為我們提供了豐富多樣的娛樂體驗。希望大家能在欣賞這些作品時，能夠分辨出它們到底是純粹的架空奇幻，還是以地球為原型的奇幻世界。</p>
 </div>
-<table>
+<!-- 搜尋功能 -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="搜尋分類、作品名稱..." onkeyup="searchTable()">
+</div>
+<table id="fantasyTable">
     <thead>
         <tr>
             <th>分類名稱</th>
@@ -184,6 +188,40 @@
         </tr>
     </tbody>
 </table>
+<script>
+    // 搜尋功能的 JavaScript
+    function searchTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("fantasyTable");
+        tr = table.getElementsByTagName("tr");
+
+        // 遍歷所有表格行，並過濾顯示
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            let rowContainsSearch = false;
+
+            // 遍歷行中的每一個單元格
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        rowContainsSearch = true;
+                        break;
+                    }
+                }
+            }
+
+            // 根據搜尋結果顯示或隱藏該行
+            if (rowContainsSearch) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+</script>
 <h2>結語</h2>
 <p style="display: block;text-align: center;">透過這張表格，我們可以清楚地看到奇幻作品的世界觀差異，不論是純粹的架空世界，還是以現實為基礎並融入奇幻元素的作品，每一種設定都有其獨特的魅力和深度。在欣賞這些奇幻作品時，了解它們所依據的世界觀不僅能提升我們的觀賞體驗，還能讓我們對不同創作手法有更深的理解。</p>
 
