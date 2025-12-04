@@ -62,6 +62,25 @@
             display: block;
             text-align: center;
         }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share {
+            color: #4267B2;
+        }
+        #social-share a#line-share {
+            color: #00C300;
+        }
+        #social-share a#twitter-share {
+            color: #1DA1F2;
+        }
     </style>
 </head>
 <body>
@@ -236,7 +255,27 @@
 <p style="display: block;text-align: center;">無論你是喜愛純粹的高奇幻世界，還是沉迷於現實世界與奇幻交織的都市奇幻作品，都能在這些多樣的世界中找到屬於自己的那一份樂趣。希望這份分類標準能夠幫助你在選擇奇幻作品時，作出更明智的決定，也希望你在這些奇幻世界中，能夠探索到更多讓人驚艷與啟發的故事。</p>
 
 <p style="display: block;text-align: center;">最後，無論是閱讀、觀看還是遊玩，奇幻作品都是一種逃離現實的奇妙體驗，讓我們在不同的世界裡自由徜徉，體驗無限的冒險與夢想。</p>
-
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer>
     <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
     <p>創作日期：2025 年 10 月 6 日</p>

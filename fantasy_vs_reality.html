@@ -86,6 +86,25 @@
     .reality { background-color: #fff3e0; } /* 橘色系表示現實 */
     caption { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
     .emoji { font-size: 1.5em; margin-right: 6px; vertical-align: middle; }
+    #social-share a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #social-share a:hover {
+      text-decoration: underline;
+    }
+    #social-share span {
+      margin: 0 5px;
+    }
+    #social-share a#fb-share {
+      color: #4267B2;
+    }
+    #social-share a#line-share {
+      color: #00C300;
+    }
+    #social-share a#twitter-share {
+      color: #1DA1F2;
+    }
     @media screen and (max-width: 767px) {
       iframe {
         max-width: 100%;
@@ -395,6 +414,27 @@
 </table>
 <h2 id="final_section">5. 結語：</h2>
 <p>這種對歷史、自然和人體極限的藝術加工，雖然為我們提供了豐富的娛樂體驗和廣闊的想像空間，但也提醒著我們，虛構作品為了敘事和審美目的，會刻意忽略現實的複雜性與不便之處。<strong>其中，對排泄等基本生理需求的迴避、對黑死病肆虐和獵巫恐懼等歷史創傷的避而不談，以及對武器操作和個人武力脫離現實的浪漫化，尤其突顯了虛構與現實之間存在一道深刻的鴻溝。</strong>區分遊戲與現實，理解其中巨大的反差，能讓我們更客觀地看待這些迷人的幻想世界。</p>
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+  <span> | </span>
+  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+  <span> | </span>
+  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+  // 自動抓取當前頁面的 URL
+  var currentUrl = window.location.href;
+  // Facebook 分享
+  document.getElementById("fb-share").href =
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+  // Line 分享
+  document.getElementById("line-share").href =
+          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+  // X (Twitter) 分享
+  document.getElementById("twitter-share").href =
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer>
   <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
   <p>創作日期：2025 年 10 月 5 日</p>
