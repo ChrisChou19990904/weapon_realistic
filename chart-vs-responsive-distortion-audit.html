@@ -398,7 +398,36 @@
                     </div>
                 </div>
             </div>
-
+            <div class="screenshot-card">
+                <h4>🎯 極座標雷達圖：天使外貌之形態特徵矩陣</h4>
+                <div class="tech-tags">
+                    <span class="tag">雷達圖 Radar</span>
+                    <span class="tag">邊界遮擋漏洞</span>
+                    <span class="tag">排版盲區審計</span>
+                </div>
+                <div class="project-desc">
+                    <strong>專案實證：</strong><br>
+                    於<a href="https://chrischou19990904.github.io/religion_is_fake/change_of_christianity_and_crucifix.html" target="_blank">宗教與科學衝突專案</a>中，破除大眾對金髮碧眼天使的過度美化濾鏡。逆向工程將聖經原始文本之物理描述與現代工程學（LiDAR、陀螺儀推進器）及【百獸戰隊牙吠王】合體結構進行跨領域多維度特徵建模。
+                    <br><strong>幾何審計與響應式漏洞報告：</strong><br>
+                    本卡片之雙圖極其精準地捕捉到了雷達圖在移動端的物理極限，是本次審計最具價值的對照組：
+                    <ul>
+                        <li><strong>🔓 移除 Viewport（左圖）：</strong> 實施反響應式防禦。手機端以桌機級寬廣畫布進行渲染，上方的文字脈絡、特攝影片與多維度雷達圖水平並排，外圍標籤空間極度充裕，展現工整、無失真的嚴密排版。</li>
+                        <li><strong>🔒 加上 Viewport（右圖）：</strong> 強行引入移動端擠壓。此實測鐵證揭露了雷達圖的雙重特性——雖然極座標系扭曲度低，半徑內縮流暢，**但當寬度鎖死在行動端窄螢幕時，外圍長文本關鍵字（如：底層美化度、完整度）會因 Canvas 畫布邊界限制，直接發生字體被螢幕邊緣無情遮擋、切斷的致命錯誤！** 實證了「低扭曲不等於絕對安全」，盲從響應式依然會導致重要資訊受損。</li>
+                    </ul>
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>
+                    若在全端裝置閱讀覺得截圖字體有些微點陣圖片壓縮模糊，請直接點擊進入上述各專案連結調閱網格原始碼，即可還原 100% 高清無失真之幾何陣列。
+                </div>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="angel-radar-context-mobile.jpg" alt="天使形態審計移除Viewport截圖">
+                        <span class="img-label success">🔓 移除 Viewport (空間充裕無遮擋)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="angel-radar-pure-mobile.jpg" alt="天使雷達圖加上Viewport內縮截圖">
+                        <span class="img-label fail">🔒 加上 Viewport (文字遭邊緣遮擋崩潰)</span>
+                    </div>
+                </div>
+            </div>
             <div class="screenshot-card">
                 <h4>🎯 極座標雷達圖：多維特徵與效能特徵矩陣</h4>
                 <div class="tech-tags">
@@ -478,7 +507,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="analysis-box" style="margin-top: 40px;" id="conclusion">
