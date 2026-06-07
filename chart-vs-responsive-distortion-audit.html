@@ -29,10 +29,21 @@
             margin: 0 auto;
         }
 
+        /* 導覽與頁首區 */
         header {
             margin-bottom: 40px;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
+        }
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.2em;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1.1em;
         }
         a {
             color: #2980b9;
@@ -41,6 +52,8 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* 社群分享區 */
         #social-share a {
             text-decoration: none;
             font-weight: bold;
@@ -51,27 +64,11 @@
         #social-share span {
             margin: 0 5px;
         }
-        #social-share a#fb-share {
-            color: #4267B2;
-        }
-        #social-share a#line-share {
-            color: #00C300;
-        }
-        #social-share a#twitter-share {
-            color: #1DA1F2;
-        }
-        h1 {
-            color: var(--accent-color);
-            font-size: 2.2em;
-            margin: 0 0 10px 0;
-        }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
 
-        .subtitle {
-            color: var(--text-muted);
-            font-style: italic;
-            font-size: 1.1em;
-        }
-
+        /* 通用容器與清單 */
         .analysis-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -79,35 +76,46 @@
             padding: 28px;
             margin-bottom: 40px;
         }
-
         .analysis-box h2 {
             margin-top: 0;
             color: var(--accent-color);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 12px;
         }
-
         .analysis-box h3 {
             color: var(--warning-color);
             margin-top: 24px;
         }
-
         ul {
             padding-left: 20px;
         }
-
         li {
             margin-bottom: 12px;
         }
 
-        /* 專案說明與截圖展示網格 (2x2 四格旗艦佈局) */
+        /* 獨立代碼示範面板區 */
+        .code-demonstration-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+        }
+        .code-demonstration-box h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            font-size: 1.4em;
+        }
+
+        /* 實證截圖展示網格 (2x2 四格佈局) */
         .screenshot-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 40px;
         }
-
         .screenshot-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -116,7 +124,6 @@
             display: flex;
             flex-direction: column;
         }
-
         .screenshot-card h4 {
             font-size: 1.3em;
             margin-top: 0;
@@ -126,7 +133,6 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
-
         .tech-tags {
             display: flex;
             gap: 8px;
@@ -134,7 +140,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .tag {
             background-color: var(--tag-bg);
             color: var(--text-muted);
@@ -143,7 +148,6 @@
             font-size: 0.85em;
             font-weight: bold;
         }
-
         .project-desc {
             font-size: 0.95em;
             color: var(--text-color);
@@ -162,14 +166,12 @@
             box-sizing: border-box;
             margin-top: auto;
         }
-
         .img-box {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .img-box img {
             max-width: 100%;
             height: auto;
@@ -177,7 +179,6 @@
             border: 3px solid #334155;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
-
         .img-label {
             margin-top: 8px;
             font-size: 0.85em;
@@ -186,6 +187,7 @@
         .img-label.success { color: #10b981; }
         .img-label.fail { color: #ef4444; }
 
+        /* 行內與區塊程式碼樣式 (已完美去重合併) */
         code {
             background-color: #1e293b;
             color: #f43f5e;
@@ -194,7 +196,6 @@
             font-family: "Courier New", Courier, monospace;
             font-size: 0.95em;
         }
-        /* 程式碼展示區塊專屬高階樣式 */
         .code-block-wrapper {
             background-color: #0b0f17;
             border: 1px solid #1e293b;
@@ -205,7 +206,6 @@
             font-size: 0.9em;
             overflow-x: auto;
         }
-
         .code-comment { color: #64748b; font-style: italic; }
         .code-keyword { color: #f43f5e; font-weight: bold; }
         .code-string { color: #10b981; }
@@ -259,8 +259,18 @@
         <h1>🌐 跨領域專案旗艦實證：資料視覺化幾何不失真報告</h1>
         <div class="subtitle">技術實踐：Chart.js 圖表理論 ＆ 網頁反響應式架構防禦思辨</div>
     </header>
-
     <div class="analysis-box">
+        <h2>目錄</h2>
+        隨便點選下方其中一個主題便能直接跳到該主題的說明區
+        <ol>
+            <li><a href="#what_is_chart.js">📊 什麼是 Chart.js？（給前端新手的白話指南）</a></li>
+            <li><a href="#how_to_use_chart.js">🚀 核心配置範例：如何透過標準 JavaScript 初始化 Chart.js</a></li>
+            <li><a href="#why_we_remove_view_report">🛠️ 架構思辨：解密 Viewport 標籤的「刻意缺席」</a></li>
+            <li><a href="#screen_of_chart.js">🔍 核心數據審計：全專案圖表響應式衝突實證看板</a></li>
+            <li><a href="#conclusion">總結：座標系的物理極限與架構抉擇</a></li>
+        </ol>
+    </div>
+    <div class="analysis-box" id="what_is_chart.js">
         <h2>📊 什麼是 Chart.js？（給前端新手的白話指南）</h2>
         <p>
             簡單來說，<strong>Chart.js 是一個專門用來在網頁上「畫圖表」的 JavaScript 工具庫</strong>。當你手上有密密麻麻的數據（例如陣列、資料庫撈出來的 JSON），如果只用 HTML 刻表格，讀者根本看不懂。這時候你只要把數據丟給 Chart.js，它就能自動幫你畫出漂亮的<strong>折線圖、長條圖、圓餅圖或雷達圖</strong>。
@@ -268,12 +278,14 @@
         <p>
             它的底層是利用 HTML5 的 <code>&lt;canvas&gt;</code>（畫布）技術，直接在網頁上把圖形「畫」成一張點陣圖。因為它設定簡單、內建動畫效果，是軟體圈最熱門的圖表工具之一。
         </p>
-        <p style="margin-top: 24px; margin-bottom: 10px; font-weight: bold; color: var(--accent-color);">
-            🚀 核心配置範例：如何透過標準 JavaScript 初始化 Chart.js
-        </p>
-        <p style="margin-size: 0.9em; color: var(--text-muted); margin-bottom: 15px;">
+    </div>
+    <div class="code-demonstration-box" id="how_to_use_chart.js">
+        <h2>🚀 核心配置範例：如何透過標準 JavaScript 初始化 Chart.js</h2>
+
+        <p style="font-size: 0.95em; color: var(--text-muted); margin-bottom: 20px;">
             以下展示在原生網頁中引入第三方 CDN 套件的標準骨架。透過定義 <code>type</code>、<code>data</code>（包含 <code>labels</code> 與 <code>datasets</code>）以及控制幾何形變的 <code>options</code>（包含 <code>scales</code> 與 <code>plugins</code>），即可在 HTML5 畫布上渲染出嚴密的數據圖表。
         </p>
+
         <div class="code-block-wrapper">
             <span class="code-comment">&lt;!-- 1. 引入第三方 CDN 套件：告訴瀏覽器下載 Chart.js 的核心渲染引擎 --&gt;</span><br>
             &lt;<span class="code-keyword">script</span> <span class="code-key">src</span>=<span class="code-string">"https://cdn.jsdelivr.net/npm/chart.js"</span>&gt;&lt;/<span class="code-keyword">script</span>&gt;<br><br>
@@ -303,12 +315,12 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">plugins</span>: { <span class="code-comment">// 額外套件（如：圖例顯示、文字標籤色彩）</span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">legend</span>: { <span class="code-key">labels</span>: { <span class="code-key">color</span>: <span class="code-string">'#e2e8f0'</span> } }<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
             &lt;/<span class="code-keyword">script</span>&gt;
         </div>
     </div>
-
-    <div class="analysis-box">
+    <div class="analysis-box" id="why_we_remove_view_report">
         <h2>🛠️ 架構思辨：解密 Viewport 標籤的「刻意缺席」</h2>
         <p>
             許多剛接觸前端網頁開發的新手工程師，在建立 HTML 模板時都會習慣性地加上 <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> 標籤，甚至認為沒有放這個標籤就是工程師的疏忽或遺忘。
@@ -331,137 +343,169 @@
         </ul>
     </div>
 
-    <div class="screenshot-grid">
+    <div class="analysis-box" style="margin-top: 40px;" id="screen_of_chart.js">
+        <h2>🔍 核心數據審計：全專案圖表響應式衝突實證看板</h2>
+        <p style="font-size: 0.95em; color: var(--text-muted); margin-bottom: 25px;">
+            以下矩陣完整收錄了跨領域專案中，不同座標體系（笛卡爾座標系 vs. 極座標系）在手機端原生渲染下的真實物理表現。透過「反響應式鎖定（無 Viewport）」與「標準響應式擠壓（有 Viewport）」的像素級畫面實測，嚴密論證設計主權對數據尊嚴的決定性影響。
+        </p>
 
-        <div class="screenshot-card">
-            <h4>📊 離散數值長條圖：恆河污染實證</h4>
-            <div class="tech-tags">
-                <span class="tag">長條圖 Bar</span>
-                <span class="tag">空間實體對比</span>
-                <span class="tag">社會解構矩陣</span>
-            </div>
-            <div class="project-desc">
-                <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/hinduism_and_social_glitch.html" target="_blank">宗教與科學衝突專案</a>中，以長條圖動態展示恆河流經的印度各大城市的大腸桿菌濃度實測數據，強力破除「聖水能淨化身體」的迷信。
-                <br><strong>幾何審計：</strong><br>加了 Viewport（右）會導致 X 軸城市標籤被迫旋轉 45 度傾斜、視覺對比張力被閹割；移除 Viewport（left）使城市名稱完美水平並排，數據高聳對比一眼秒懂。
-                <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
-            </div>
-            <div class="comparison-container">
-                <div class="img-box">
-                    <img src="ganga-no-viewport.jpg" alt="未擠壓">
-                    <span class="img-label success">🔓 移除 Viewport (水平工整)</span>
-                </div>
-                <div class="img-box">
-                    <img src="ganga-with-viewport.jpg" alt="已擠壓">
-                    <span class="img-label fail">🔒 加上 Viewport (文字傾斜)</span>
-                </div>
-            </div>
-        </div>
+        <div class="screenshot-grid" style="margin-bottom: 10px;">
 
-        <div class="screenshot-card">
-            <h4>🎯 極座標雷達圖：文明 OS 效能對比</h4>
-            <div class="tech-tags">
-                <span class="tag">雷達圖 Radar</span>
-                <span class="tag">多維能力特徵</span>
-                <span class="tag">極座標系</span>
-            </div>
-            <div class="project-desc">
-                <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/druidism.html" target="_blank">宗教與科學衝突專案</a>中，橫向量化評估德魯伊「口傳體制 OS」與基督教「文字體制 OS」在五大指標（資訊儲存率、傳播頻寬、抗損毀性、擴展性與邏輯一致性）上的能力特徵模型。
-                <br><strong>幾何審計：</strong><br>極座標系由圓心向外發散。在手機強行壓縮下（右），外圍的核心技術標籤（如 Checksum）會被生硬切斷或折行破版，嚴重流失資訊完整性；而在標準桌機畫布下（左），兩大體制清晰並排，文字體制展現完勝的降維打擊。
-                <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
-            </div>
-            <div class="comparison-container">
-                <div class="img-box">
-                    <img src="druid-loss-no-viewport.jpg" alt="未擠壓">
-                    <span class="img-label success">🔓 移除 Viewport (標籤完整)</span>
+            <div class="screenshot-card">
+                <h4>📊 離散數值長條圖：恆河污染實證</h4>
+                <div class="tech-tags">
+                    <span class="tag">長條圖 Bar</span>
+                    <span class="tag">空間實體對比</span>
+                    <span class="tag">社會解構矩陣</span>
                 </div>
-                <div class="img-box">
-                    <img src="druid-loss-with-viewport.jpg" alt="已擠壓">
-                    <span class="img-label fail">🔒 加上 Viewport (標籤殘缺)</span>
+                <div class="project-desc">
+                    <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/hinduism_and_social_glitch.html" target="_blank">宗教與科學衝突專案</a>中，以長條圖動態展示恆河流經的印度各大城市的大腸桿菌濃度實測數據，強力破除「聖水能淨化身體」的迷信。
+                    <br><strong>幾何審計：</strong><br>加了 Viewport（右）會導致 X 軸城市標籤被迫旋轉 45 度傾斜、視覺對比張力被閹割；移除 Viewport（left）使城市名稱完美水平並排，數據高聳對比一眼秒懂。
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
                 </div>
-            </div>
-        </div>
-        <!-- 2. 極座標雷達圖（雙行動端完美自適應實證版） -->
-        <div class="screenshot-card">
-            <h4>🎯 極座標雷達圖：多維特徵與效能特徵矩陣</h4>
-            <div class="tech-tags">
-                <span class="tag">雷達圖 Radar</span>
-                <span class="tag">多維能力量化</span>
-                <span class="tag">行動端雙重實證</span>
-            </div>
-            <div class="project-desc">
-                <strong>專案實證與多維度擴充：</strong><br>
-                本架構廣泛運用於多個硬核科學考據專案，並在此頁面直接展示兩款在行動端（皆配置有 Viewport 效果）原生瀏覽下的完美渲染成果：
-                <ul>
-                    <li><strong>左圖實證（實戰兵器）：</strong><br>於<a href="index.html" target="_blank">【本專案首頁】</a>中，逆向工程評估 10 種冷兵器的「實用性」與「視覺帥氣度」數值 Trade-off，實證真正能活下來的兵器從非大開大合的炫技。</li>
-                    <li><strong>右圖實證（吸血鬼主題）：</strong><br>於<a href="https://chrischou19990904.github.io/jiangshi_vampire_zombie/level_of_jiangshi.html" target="_blank">【吸血鬼主題研究專案】</a>中，針對中國殭屍（跳殭、飛殭、魃、犼）進行修煉階段與破壞力等級的精準比較分析。</li>
-                </ul>
-                <strong>幾何審計與響應式高度自適應報告：</strong><br>
-                <strong>極座標系之天然防禦力（絕對優勢）：</strong><br>
-                這兩張**完全基於手機原生瀏覽（配置有 Viewport）的真實截圖**，強力證實了雷達圖在行動端佈局上的絕對統治力。由於數據由中央圓心向外對稱發散，當螢幕寬度驟降時，Chart.js 僅需等比例收縮圖表的幾何半徑，多邊形面積與外圍標籤便會極其流暢地向內靠攏。**其幾何結構扭曲程度極低、文字工整、關鍵字絕無遮擋**，完全不會觸發長條圖或折線圖那種標籤被迫強行歪斜 45 度的視覺災難。
-                <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>
-                若在全端裝置閱讀覺得截圖字體有些微點陣圖片壓縮模糊，請直接點擊進入上述各專案連結調閱網格原始碼，即可還原 100% 高清無失真之幾何陣列。
-            </div>
-            <div class="comparison-container">
-                <div class="img-box">
-                    <!-- 🎯 這裡放置你用手機截下來的「實戰兵器對比雷達圖」 -->
-                    <img src="weapon-radar-mobile.jpg" alt="兵器首頁雷達圖手機截圖">
-                    <span class="img-label success">📱 兵器首頁實證 (手機原生 Viewport 渲染)</span>
-                </div>
-                <div class="img-box">
-                    <!-- 🎯 這裡放置你用手機截下來的「中國殭屍等級雷達圖」 -->
-                    <img src="jiangshi-radar-mobile.jpg" alt="吸血鬼專案殭屍雷達圖手機截圖">
-                    <span class="img-label success">📱 殭屍能力量化 (手機原生 Viewport 渲染)</span>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="ganga-no-viewport.jpg" alt="未擠壓">
+                        <span class="img-label success">🔓 移除 Viewport (水平工整)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="ganga-with-viewport.jpg" alt="已擠壓">
+                        <span class="img-label fail">🔒 加上 Viewport (文字傾斜)</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="screenshot-card">
-            <h4>📈 連續折線圖：大腦數據揮發曲線</h4>
-            <div class="tech-tags">
-                <span class="tag">折線圖 Line</span>
-                <span class="tag">時間序列</span>
-                <span class="tag">笛卡爾座標系</span>
-            </div>
-            <div class="project-desc">
-                <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/druidism.html" target="_blank">宗教與科學衝突專案</a>中，用於橫向比對人類大腦作為「揮發性記憶體」的艾賓浩斯遺忘曲線，精確量化知識數據在輸入大腦後隨時間推移產生的自然揮發與嚴重損毀。
-                <br><strong>幾何審計：</strong><br>笛卡爾座標系高度依賴橫向空間。強行響應式（右）會導致底部時間點密集重疊，曲線斜率在視覺上產生嚴重的失真與加速墜落的視覺誤差；移除 Viewport（左）則捍衛了高減速特徵的平滑物理曲線。
-                <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
-            </div>
-            <div class="comparison-container">
-                <div class="img-box">
-                    <img src="forgetting-curve-no-viewport.jpg" alt="未擠壓">
-                    <span class="img-label success">🔓 移除 Viewport (時間線對齊)</span>
-                </div>
-                <div class="img-box">
-                    <img src="forgetting-curve-with-viewport.jpg" alt="已擠壓">
-                    <span class="img-label fail">🔒 加上 Viewport (斜率扭曲)</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="screenshot-card">
-            <h4>📈 雙 Y 軸折線圖：神蹟消亡與技術普及因果線</h4>
-            <div class="tech-tags">
-                <span class="tag">雙軸折線圖</span>
-                <span class="tag">跨維度因果建模</span>
-                <span class="tag">笛卡爾座標系</span>
-            </div>
-            <div class="project-desc">
-                <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/real_jesus_christ.html" target="_blank">宗教與科學衝突專案</a>中，將東西方神話神蹟發生頻率 $P(m)$（左軸變數）與高精確度觀測設備（4K 智慧型手機）普及率 $R(t)$（右軸變數）進行跨維度因果建模，實證「神蹟隨觀測技術普及而強行消亡」的系統規律。
-                <br><strong>幾何審計：</strong><br>由於雙軸各綁定異質數據指標，當手機端強行壓縮畫布時，兩邊 Y 軸空間不對稱會直接造成下方 X 軸時間線大錯位。移除 Viewport 後，紅藍雙軌反比例曲線得以在水平時間軸上精確交會。
-                <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
-            </div>
-            <div class="comparison-container">
-                <div class="img-box">
-                    <img src="miracle-vs-camera-no-viewport.jpg" alt="未擠壓">
-                    <span class="img-label success">🔓 移除 Viewport (雙軸高精度對齊)</span>
+            <div class="screenshot-card">
+                <h4>🎯 極座標雷達圖：文明 OS 效能對比</h4>
+                <div class="tech-tags">
+                    <span class="tag">雷達圖 Radar</span>
+                    <span class="tag">多維能力特徵</span>
+                    <span class="tag">極座標系</span>
                 </div>
-                <div class="img-box">
-                    <img src="miracle-vs-camera-with-viewport.jpg" alt="已擠壓">
-                    <span class="img-label fail">🔒 加上 Viewport (時間軸錯位)</span>
+                <div class="project-desc">
+                    <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/druidism.html" target="_blank">宗教與科學衝突專案</a>中，橫向量化評估德魯伊「口傳體制 OS」與基督教「文字體制 OS」在五大指標（資訊儲存率、傳播頻寬、抗損毀性、擴展性與邏輯一致性）上的能力特徵模型。
+                    <br><strong>幾何審計：</strong><br>極座標系由圓心向外發散。在手機強行壓縮下（右），外圍的核心技術標籤（如 Checksum）會被生硬切斷或折行破版，嚴重流失資訊完整性；而在標準桌機畫布下（左），兩大體制清晰並排，文字體制展現完勝的降維打擊。
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
+                </div>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="druid-loss-no-viewport.jpg" alt="未擠壓">
+                        <span class="img-label success">🔓 移除 Viewport (標籤完整)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="druid-loss-with-viewport.jpg" alt="已擠壓">
+                        <span class="img-label fail">🔒 加上 Viewport (標籤殘缺)</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
+            <div class="screenshot-card">
+                <h4>🎯 極座標雷達圖：多維特徵與效能特徵矩陣</h4>
+                <div class="tech-tags">
+                    <span class="tag">雷達圖 Radar</span>
+                    <span class="tag">多維能力量化</span>
+                    <span class="tag">行動端雙重實證</span>
+                </div>
+                <div class="project-desc">
+                    <strong>專案實證與多維度擴充：</strong><br>
+                    本架構廣泛運用於多個硬核科學考據專案，並在此頁面直接展示兩款在行動端（皆配置有 Viewport 效果）原生瀏覽下的完美渲染成果：
+                    <ul>
+                        <li><strong>左圖實證（實戰兵器）：</strong><br>於<a href="index.html" target="_blank">【本專案首頁】</a>中，逆向工程評估 10 種冷兵器的「實用性」與「視覺帥氣度」數值 Trade-off，實證真正能活下來的兵器從非大開大合的炫技。</li>
+                        <li><strong>右圖實證（吸血鬼主題）：</strong><br>於<a href="https://chrischou19990904.github.io/jiangshi_vampire_zombie/level_of_jiangshi.html" target="_blank">【吸血鬼主題研究專案】</a>中，針對中國殭屍（跳殭、飛殭、魃、犼）進行修煉階段與破壞力等級的精準比較分析。</li>
+                    </ul>
+                    <strong>幾何審計與響應式高度自適應報告：</strong><br>
+                    <strong>極座標系之天然防禦力（絕對優勢）：</strong><br>
+                    這兩張**完全基於手機原生瀏覽（配置有 Viewport）的真實截圖**，強力證實了雷達圖在行動端佈局上的絕對統治力。由於數據由中央圓心向外對稱發散，當螢幕寬度驟降時，Chart.js 僅需等比例收縮圖表的幾何半徑，多邊形面積與外圍標籤便會極其流暢地向內靠攏。**其幾何結構扭曲程度極低、文字工整、關鍵字絕無遮擋**，完全不會觸發長條圖或折線圖那種標籤被迫強行歪斜 45 度的視覺災難。
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>
+                    若在全端裝置閱讀覺得截圖字體有些微點陣圖片壓縮模糊，請直接點擊進入上述各專案連結調閱網格原始碼，即可還原 100% 高清無失真之幾何陣列。
+                </div>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="weapon-radar-mobile.jpg" alt="兵器首頁雷達圖手機截圖">
+                        <span class="img-label success">📱 兵器首頁實證 (手機原生 Viewport 渲染)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="jiangshi-radar-mobile.jpg" alt="吸血鬼專案殭屍雷達圖手機截圖">
+                        <span class="img-label success">📱 殭屍能力量化 (手機原生 Viewport 渲染)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshot-card">
+                <h4>📈 連續折線圖：大腦數據揮發曲線</h4>
+                <div class="tech-tags">
+                    <span class="tag">折線圖 Line</span>
+                    <span class="tag">時間序列</span>
+                    <span class="tag">笛卡爾座標系</span>
+                </div>
+                <div class="project-desc">
+                    <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/druidism.html" target="_blank">宗教與科學衝突專案</a>中，用於橫向比對人類大腦作為「揮發性記憶體」的艾賓浩斯遺忘曲線，精確量化知識數據在輸入大腦後隨時間推移產生的自然揮發與嚴重損毀。
+                    <br><strong>幾何審計：</strong><br>笛卡爾座標系高度依賴橫向空間。強行響應式（右）會導致底部時間點密集重疊，曲線斜率在視覺上產生嚴重的失真與加速墜落的視覺誤差；移除 Viewport（左）則捍衛了高減速特徵的平滑物理曲線。
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表.
+                </div>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="forgetting-curve-no-viewport.jpg" alt="未擠壓">
+                        <span class="img-label success">🔓 移除 Viewport (時間線對齊)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="forgetting-curve-with-viewport.jpg" alt="已擠壓">
+                        <span class="img-label fail">🔒 加上 Viewport (斜率扭曲)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshot-card">
+                <h4>📈 雙 Y 軸折線圖：神蹟消亡與技術普及因果線</h4>
+                <div class="tech-tags">
+                    <span class="tag">雙軸折線圖</span>
+                    <span class="tag">跨維度因果建模</span>
+                    <span class="tag">笛卡爾座標系</span>
+                </div>
+                <div class="project-desc">
+                    <strong>專案實證：</strong><br>於<a href="https://chrischou19990904.github.io/religion_is_fake/real_jesus_christ.html" target="_blank">宗教與科學衝突專案</a>中，將東西方神話神蹟發生頻率 $P(m)$（left軸變數）與高精確度觀測設備（4K 智慧型手機）普及率 $R(t)$（右軸變數）進行跨維度因果建模，實證「神蹟隨觀測技術普及而強行消亡」的系統規律。
+                    <br><strong>幾何審計：</strong><br>由於雙軸各綁定異質數據指標，當手機端強行壓縮畫布時，兩邊 Y 軸空間不對稱會直接造成下方 X 軸時間線大錯位。移除 Viewport 後，紅藍雙軌反比例曲線得以在水平時間軸上精確交會。
+                    <br><strong style="color: var(--warning-color);">💡 觀看提示：</strong><br>若在手機端閱讀覺得圖表模糊，請直接點擊進入該文章連結，並雙指放大螢幕即可完美還原高清高精度圖表。
+                </div>
+                <div class="comparison-container">
+                    <div class="img-box">
+                        <img src="miracle-vs-camera-no-viewport.jpg" alt="未擠壓">
+                        <span class="img-label success">🔓 移除 Viewport (雙軸高精度對齊)</span>
+                    </div>
+                    <div class="img-box">
+                        <img src="miracle-vs-camera-with-viewport.jpg" alt="已擠壓">
+                        <span class="img-label fail">🔒 加上 Viewport (時間軸錯位)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="analysis-box" style="margin-top: 40px;" id="conclusion">
+        <h2>總結：座標系的物理極限與架構抉擇</h2>
+        <p>
+            綜合本次維度審計與行動端的渲染實測，我們可以用嚴密的幾何邏輯得出以下結論：
+        </p>
+
+        <ul>
+            <li>
+                <strong>橫向空間敏感度：長條圖 & 折線圖 (失真度：極高)</strong><br>
+                這類圖表屬於標準的<strong>笛卡爾座標系（X-Y 軸）</strong>，其資訊密度與視覺對比高度依賴網頁的「橫向寬度」。一旦強行引入移動端響應式（Viewport）擠壓，系統為了妥協空間，必然會觸發破壞性的防禦機制——導致 X 軸標籤大角度歪斜、時間軸錯位、連續曲線斜率失真。對於需要精密因果建模與數量對比的數據，其造成的資訊受損是最嚴重的。
+            </li>
+            <li>
+                <strong>維度向內收縮度：雷達圖 (失真度：較低)</strong><br>
+                雷達圖屬於<strong>極座標系</strong>，數據是由中央圓心向外發散。在響應式擠壓下，它具備天生的「幾何容錯率」，僅需等比例調變半徑即可平滑內縮，核心多邊形面積與數據張力在行動端能以近乎完美的姿態無傷生還，幾何扭曲程度遠低於笛卡爾座標系。
+            </li>
+            <li>
+                <strong>無法忽視的排版盲區 (潛在風險)</strong><br>
+                然而，<strong>雷達圖的「低扭曲」並不等於「絕對安全」</strong>。儘管圖形幾何本身自適應流暢，但若外圍分類的關鍵字字數過長（例如複雜的技術指標或長名稱項目），在極窄的螢幕寬度下，Canvas 畫布的物理邊界仍可能與瀏覽器排版引擎發生衝突。這會導致<strong>外圍標籤字體被迫折行，甚至發生關鍵資訊被螢幕邊緣無情遮擋、切斷的致命錯誤</strong>。
+            </li>
+        </ul>
+
+        <p style="margin-top: 20px; border-left: 4px solid var(--warning-color); padding-left: 15px; font-style: italic; color: var(--text-muted);">
+            <strong>⚖️ 架構師的權衡 (Trade-off)：</strong><br>
+            資料視覺化沒有萬靈丹。套用盲目的響應式模板，往往是在閹割數據的尊嚴。在面對極高密度的科學考據網頁時，<strong>「刻意移除 Viewport」並引導全端讀者進行自主物理縮放</strong>，才是捍衛數據幾何主權、拒絕系統無效渲染的最硬核防禦。
+        </p>
     </div>
 </div>
 <ul id="messages"></ul>
