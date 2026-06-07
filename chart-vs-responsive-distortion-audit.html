@@ -194,6 +194,23 @@
             font-family: "Courier New", Courier, monospace;
             font-size: 0.95em;
         }
+        /* 程式碼展示區塊專屬高階樣式 */
+        .code-block-wrapper {
+            background-color: #0b0f17;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: "Fira Code", "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
+        .code-comment { color: #64748b; font-style: italic; }
+        .code-keyword { color: #f43f5e; font-weight: bold; }
+        .code-string { color: #10b981; }
+        .code-number { color: #f59e0b; }
+        .code-key { color: #38bdf8; }
     </style>
 </head>
 <body>
@@ -251,6 +268,44 @@
         <p>
             它的底層是利用 HTML5 的 <code>&lt;canvas&gt;</code>（畫布）技術，直接在網頁上把圖形「畫」成一張點陣圖。因為它設定簡單、內建動畫效果，是軟體圈最熱門的圖表工具之一。
         </p>
+        <p style="margin-top: 24px; margin-bottom: 10px; font-weight: bold; color: var(--accent-color);">
+            🚀 核心配置範例：如何透過標準 JavaScript 初始化 Chart.js
+        </p>
+        <p style="margin-size: 0.9em; color: var(--text-muted); margin-bottom: 15px;">
+            以下展示在原生網頁中引入第三方 CDN 套件的標準骨架。透過定義 <code>type</code>、<code>data</code>（包含 <code>labels</code> 與 <code>datasets</code>）以及控制幾何形變的 <code>options</code>（包含 <code>scales</code> 與 <code>plugins</code>），即可在 HTML5 畫布上渲染出嚴密的數據圖表。
+        </p>
+        <div class="code-block-wrapper">
+            <span class="code-comment">&lt;!-- 1. 引入第三方 CDN 套件：告訴瀏覽器下載 Chart.js 的核心渲染引擎 --&gt;</span><br>
+            &lt;<span class="code-keyword">script</span> <span class="code-key">src</span>=<span class="code-string">"https://cdn.jsdelivr.net/npm/chart.js"</span>&gt;&lt;/<span class="code-keyword">script</span>&gt;<br><br>
+
+            <span class="code-comment">&lt;!-- 2. HTML 畫布節點：準備一個容器讓引擎繪製圖形 --&gt;</span><br>
+            &lt;<span class="code-keyword">canvas</span> <span class="code-key">id</span>=<span class="code-string">"myChart"</span>&gt;&lt;/<span class="code-keyword">canvas</span>&gt;<br><br>
+
+            <span class="code-comment">&lt;!-- 3. JavaScript 核心初始化設定架構 --&gt;</span><br>
+            &lt;<span class="code-keyword">script</span>&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">const</span> ctx = document.getElementById(<span class="code-string">'myChart'</span>).getContext(<span class="code-string">'2d'</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">new</span> Chart(ctx, {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">type</span>: <span class="code-string">'line'</span>, <span class="code-comment">// 圖表類型（如：'line' 折線圖、'bar' 長條圖、'radar' 雷達圖）</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">data</span>: { <span class="code-comment">// 核心數據定義包</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">labels</span>: [<span class="code-string">'項目A'</span>, <span class="code-string">'項目B'</span>], <span class="code-comment">// X 軸橫向座標或雷達圖外圍標籤</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">datasets</span>: [{ <span class="code-comment">// 數據集陣列（可塞入多組連續或異質變數進行因果建模）</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">label</span>: <span class="code-string">'數據指標名稱'</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">data</span>: [<span class="code-number">100</span>, <span class="code-number">50</span>],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">borderColor</span>: <span class="code-string">'#38bdf8'</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">options</span>: { <span class="code-comment">// 圖表外觀與幾何控制核心</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">responsive</span>: <span class="code-keyword">true</span>, <span class="code-comment">// 開啟響應式縮放（在雙軸情境下易引發幾何變形）</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">scales</span>: { <span class="code-comment">// 座標軸刻度精密控制（笛卡爾座標系專屬設定）</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">x</span>: { <span class="code-key">grid</span>: { <span class="code-key">color</span>: <span class="code-string">'#1e293b'</span> } },<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">y</span>: { <span class="code-key">type</span>: <span class="code-string">'linear'</span>, <span class="code-key">position</span>: <span class="code-string">'left'</span> }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">plugins</span>: { <span class="code-comment">// 額外套件（如：圖例顯示、文字標籤色彩）</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">legend</span>: { <span class="code-key">labels</span>: { <span class="code-key">color</span>: <span class="code-string">'#e2e8f0'</span> } }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+            &lt;/<span class="code-keyword">script</span>&gt;
+        </div>
     </div>
 
     <div class="analysis-box">
