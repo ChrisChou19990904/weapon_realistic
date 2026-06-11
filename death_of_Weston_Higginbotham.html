@@ -14,73 +14,49 @@
             text-decoration: none;
         }
         .extra_system a:hover{
-                text-decoration: underline;
+            text-decoration: underline;
         }
         .extra_system a:visited{
             color: #1e40af;
         }
-        /* 尋找你原本的這段，並在下方加上 ol 的設定 */
-        .extra_system ol {
-            list-style-type: decimal !important; /* 強制啟用數字編號 */
-            padding-left: 1.25rem !important;    /* 留出左側空間顯示數字（相當於 pl-5） */
+        .extra_system ul li{
+            margin-bottom: 1rem;
+        }
+        .extra_system ol{
+            list-style-type: decimal !important;
+            padding-left: 1.25rem !important;
             margin-top: 0.5rem;
-            color:black;
         }
-
-        .extra_system ol li {
+        .extra_system ol li{
             margin-bottom: 0.5rem;
-            list-style-position: inside;         /* 確保數字在區塊內部正確排列 */
-        }
-        /* 社群分享區 */
-        #social-share a {
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #social-share a:hover {
-            text-decoration: underline;
-        }
-        #social-share span {
-            margin: 0 5px;
-        }
-        #social-share a#fb-share { color: #4267B2; }
-        #social-share a#line-share { color: #00C300; }
-        #social-share a#twitter-share { color: #1DA1F2; }
-        @media screen and (max-width: 767px) {
-            .extra_system {
-                padding: 1rem;
-            }
-            .extra_system a {
-                font-size: 0.875rem; /* 調整連結字體大小 */
-            }
-            iframe{
-                width: 100%;
-            }
+            list-style-position: inside;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased scroll-smooth selection:bg-teal-500 selection:text-slate-900">
+
 <div id="google-translate-box">
     <div id="google_translate_element"></div>
-    <!-- Google Translate 的自動翻譯功能 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <p>點擊上方的語言選單以切換語言</p>
+    <p class="text-xs text-slate-500 px-6 pt-2">點擊上方的語言選單以切換語言</p>
 </div>
-<nav class="extra_system">
+
+<nav class="extra_system p-6 m-6 rounded-2xl text-slate-900 border border-slate-200">
     <ul>
-        <li><strong style="color:black">本頁內容：</strong><br>
+        <li><strong>本頁內容：</strong><br>
             <a>從美國大學生抗拒AI引發的悲劇，看現代文明與AI工具的不可或缺性</a></li>
 
-        <li><strong style="color:black">其他文章連結：</strong>
+        <li><strong>其他文章連結：</strong>
             <ol>
                 <li><a href="index.html" target="_blank">「實戰兵器」不講帥，只講能不能活下來</a></li>
                 <li><a href="dragon_fist_two_battle_for_the_blade.html" target="_blank">《Dragon Fist Two: Battle for the Blade》的武器機制</a></li>
@@ -101,10 +77,11 @@
         </li>
     </ul>
 </nav>
+
 <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-6 py-4 flex justify-between items-center">
-        <span class="text-sm font-black tracking-wider bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
-            <i class="fa-solid fa-robot mr-2"></i>AI & CIVILIZATION
-        </span>
+    <span class="text-sm font-black tracking-wider bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
+        <i class="fa-solid fa-robot mr-2"></i>AI & CIVILIZATION
+    </span>
     <div class="flex space-x-3 md:space-x-6 text-xs md:text-sm font-medium text-slate-400">
         <a href="#tragedy-case" class="hover:text-teal-400 transition">京都悲劇詳解</a>
         <a href="#bio-defense" class="hover:text-teal-400 transition">三大文明防線</a>
@@ -116,9 +93,9 @@
 <section id="tragedy-case" class="border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 px-6 py-24">
     <div class="max-w-4xl mx-auto">
         <div class="text-center">
-                <span class="px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 rounded-full border border-rose-500/20">
-                    真實社群事件深度解構
-                </span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 rounded-full border border-rose-500/20">
+                真實社群事件深度解構
+            </span>
             <h1 class="text-3xl md:text-5xl font-black mt-6 tracking-tight leading-snug">
                 抗拒 AI 碳排放引發的絕地悲劇：<br>
                 <span class="bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent text-xl md:text-3xl font-bold">解構一名美國大學生賭氣走入京都山區餓死的底層邏輯</span>
@@ -141,7 +118,7 @@
         </div>
     </div>
 </section>
-<iframe class="mx-auto" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/acfVyvPgygs?si=DisoQIqxFzB1H7GO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 <section id="bio-defense" class="border-b border-slate-800 bg-slate-950 px-6 py-24">
     <div class="max-w-5xl mx-auto w-full">
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -226,49 +203,36 @@
 
         <div class="space-y-6 text-sm md:text-base text-slate-400 leading-relaxed text-justify md:text-center max-w-3xl mx-auto mb-10">
             <p>
-                回到那場京都山區的悲劇。那位死去的美國大學生，他最大的盲點，就在於對現代文明與科技的運作邏輯一無所知，卻攜帶著傲慢的道德批判。如果沒有現代工業與電力文明所供應的乾淨水源、先進醫療、溫飽與物資分發網，他甚至根本沒有機會健康地長大、坐在有冷氣的異國咖啡廳裡，去傲慢地思考「AI 運算到底環不環保」。
+                回到那場京都山區的悲劇。這位死去的美國大學生就讀於美國南部老牌名校<strong>奧本大學（Auburn University）</strong>。若以台灣的學術生態來做精準類比，奧本大學的排名與含金量<strong>大約相當於台灣的國立中興大學，或成功大學的工程／農醫背景老牌名校</strong>。它雖然是一所相當優質、培養出無數社會中堅的扎實名校，但客觀來看，其整體學術光環與錄取分數線，確實還未達到能輕鬆考上頂尖台大醫學系或金字塔最頂端醫學院的極端窄門等級。
             </p>
             <p>
-                <strong class="text-slate-200">AI（人工智慧）的誕生與普及，本質上絕非現代文明的無效累贅，而是人类智力、社會分工與資訊科技演進的最新成果。</strong> 就如同牙線阻絕了微觀世界的疾病、全球複雜的工業鏈孕育出一支鉛筆，AI 則是在這資訊爆炸、知識跨度極度高牆化的時代，為人類打破學門壁壘、實現跨領域高效生產力的「終極工具」。
+                然而，正是這樣一位天資與背景尚可、生活在現代高度發達溫室中的普通名校大學生，卻帶著盲目的道德優越感，去批判、抗拒他完全無法理解的現代科技。如果沒有現代工業與電力文明供應的乾淨水源、先進醫療、溫飽物資與全球資訊網絡，他甚至根本沒有機會健康地長大、坐在有冷氣的異國咖啡廳裡，去傲慢地爭論「AI 運算到底環不環保」。他連最頂尖醫學系的門檻都未必能摸到，卻天真地以為自己能脫離文明、靠一己之力在殘酷的真實荒野中存活。
+            </p>
+            <div class="p-6 bg-slate-900/60 rounded-xl border border-slate-800 text-left text-slate-300 text-sm my-6 leading-relaxed">
+                <i class="fa-solid fa-layer-group text-teal-400 mr-2"></i><strong>從天才實驗到大眾現實：AI 抹平知識階級的底層邏輯</strong><br class="mb-1">
+                這項對比揭示了一個無比深刻的真相：連前面提到那位擁有「學測滿級分、六科奧賽金牌、全能智商與長跑國手體能」的頂尖超人，在斷絕文明工具的情況下，花上一輩子都造不出任何一支簡單的鉛筆；<strong>那麼，對於像這位奧本大學學生一樣、天資與體能都處於常態分佈的「現代大眾」而言，全盤否定文明與科技，更是一場徹頭徹尾的智力災難與生存自殺。</strong>
+            </div>
+            <p>
+                <strong class="text-slate-200">這正是為什麼，AI（人工智慧）的普及對現代大眾來說至關重要。</strong> 它的誕生絕非現代文明的無效累贅，而是人類智力、社會分工與資訊科技演進的最新最高成果。在如今資訊爆炸、跨領域知識高牆化的時代，一般大眾不需要具備奧賽金牌的智商，也沒必要成為全知全能的上帝，簡直可以說，<strong>只要我們學會善用 AI 這款終極文明工具，就能打破重重學門壁壘、高效跨越知識階級，讓普通人也能一個人化身為具備調度全球知識分工的強大實踐者。</strong>
             </p>
             <p>
-                將現代科技盲目地妖魔化，並不會讓個體的靈魂顯得更高尚，反而是在主動削弱自己利用文明成果生存的權利。在當今這個技術叢林中，聰明且理性的現代人，不會選擇像那位大學生一樣為了極端的宏大敘事與現實死磕，而是會**張開雙臂擁抱 AI，將其作為武裝自己知識、更新生產力、解構複雜現實的催化劑。**
+                將現代科技盲目地妖魔化，並不會讓個體的靈魂顯得更高尚，反而是在主動削弱自己利用文明成果生存的權利。在當今這個技術叢林中，聰明且理性的現代人，不會選擇像那位奧本大學生一樣為了極端的宏大敘事與現實死磕，而是會**張開雙臂擁抱 AI，將其作為武裝自己知識、更新生產力、解構複雜現實的催化劑。**
             </p>
         </div>
 
         <div class="text-xs md:text-sm font-bold tracking-widest text-teal-400 uppercase bg-teal-500/5 border border-teal-500/15 py-4 px-8 rounded-2xl inline-block max-w-2xl leading-relaxed">
-            科技與工具本身永遠是中性的。唯有當你務實地善用眼前的技術在文明體系裡強大生存時，你才有底氣與資格，去談論如何讓這個世界變得更好。
+            科技與工具本身永遠是中性的。唯唯有當你務實地善用眼前的技術在文明體系裡強大生存時，你才有底氣與資格，去談論如何讓這個世界變得更好。
         </div>
     </div>
 </section>
-<ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
-    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
-    <span> | </span>
-    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
-    <span> | </span>
-    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
-</div>
-<script>
-    // 自動抓取當前頁面的 URL
-    var currentUrl = window.location.href;
-    // Facebook 分享
-    document.getElementById("fb-share").href =
-        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-    // Line 分享
-    document.getElementById("line-share").href =
-        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
-    document.getElementById("twitter-share").href =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
-</script>
+
 <footer class="bg-slate-950 border-t border-slate-800 py-12 text-center text-xs text-slate-500">
     <div class="max-w-4xl mx-auto px-6 space-y-4">
         <p>本網頁旨在藉由悲劇事件進行客觀的工具理性與公共衛生科學普及教育。</p>
         <p class="text-slate-600">© 2026 Civilization Shield. 整合現代前端架構與理性邏輯，正面宣揚文明技術之核心價值。</p>
-        <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:blue;text-decoration: underline">周彥廷</a></p>
-        <p>創作日期：2026 年 6 月 10 日</p>
-        <img src="理平頭.jpg" alt="作者照片" width="300" height="400" class="mx-auto">
+        <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+        <p>創作日期：2026 年 6 月 6 日</p>
+        <img src="理平頭.jpg" alt="作者照片" width="300" height="400" class="mx-auto rounded-lg border border-slate-700/50">
     </div>
 </footer>
 
