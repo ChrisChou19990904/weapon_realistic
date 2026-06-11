@@ -31,6 +31,20 @@
             margin-bottom: 0.5rem;
             list-style-position: inside;
         }
+        /* 社群分享區 */
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -225,7 +239,27 @@
         </div>
     </div>
 </section>
-
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer class="bg-slate-950 border-t border-slate-800 py-12 text-center text-xs text-slate-500">
     <div class="max-w-4xl mx-auto px-6 space-y-4">
         <p>本網頁旨在藉由悲劇事件進行客觀的工具理性與公共衛生科學普及教育。</p>
