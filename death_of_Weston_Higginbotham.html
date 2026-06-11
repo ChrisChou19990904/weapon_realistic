@@ -45,6 +45,15 @@
         #social-share a#fb-share { color: #4267B2; }
         #social-share a#line-share { color: #00C300; }
         #social-share a#twitter-share { color: #1DA1F2; }
+        @media screen and (max-width: 767px) {
+            .extra_system {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            iframe{
+                width: 100%;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -180,7 +189,7 @@
     <div class="max-w-4xl mx-auto w-full">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">工業文明的終極奇蹟：當「全能天才」撞上全球工具鏈</h2>
-            <p class="text-sm text-slate-400 max-w-2xl mx-auto">當極端思想者試圖全面抗拒現代工業社會的運作時，他們往往對「社會分工」的物理壁壘一無所知。</p>
+            <p class="text-sm text-slate-400 max-w-2xl mx-auto">當極端思想者試圖全面抗拒現代工業社會的運作時，他們往往對「社會分工」的物理與化學壁壘一無所知。</p>
         </div>
 
         <div class="space-y-6 text-sm md:text-base text-slate-400 leading-relaxed text-justify">
@@ -195,12 +204,29 @@
             <p>
                 這位天才長跑選手腦中或許記滿了地質礦物學與化學反應式，他的雙腿也具備極佳的耐力。但製造一支鉛筆，需要加州的雪松木、斯里蘭卡的石墨、密西西比州的黏土、東印度群島的橡膠與黃銅合金。在「沒有載具」的前提下，<strong>哪怕他是長跑國手，光是要用雙腳徒步穿越幾千、幾萬公里去開採這些分佈在世界各地的原料，他的物理壽命在漫長的旅途中就已經宣告耗盡。</strong>
             </p>
+
+            <!-- 新增：基本公衛用品 vs 鉛筆的硬核化工對比 -->
+            <div class="p-6 bg-slate-950 rounded-xl border border-slate-800 text-slate-300">
+                <h4 class="text-teal-400 font-bold mb-3 flex items-center text-base">
+                    <i class="fa-solid fa-flask text-teal-400 mr-2"></i>更深層的絕望：那些比鉛筆更基本的公衛護具
+                </h4>
+                <p class="text-sm text-slate-400 mb-3">
+                    如果這位天才覺得造鉛筆太難，退而求其次，試圖在荒野中製造前面網頁提到的<strong>牙線、牙膏、牙刷、衛生紙或化糞池</strong>呢？現實將會更加殘酷——因為這些現代人視為最卑微、最日常的消耗品，其<strong class="text-slate-200">製造技術的複雜度，全盤超越了一支傳統鉛筆。</strong>
+                </p>
+                <ul class="list-disc pl-5 text-xs md:text-sm text-slate-400 space-y-2 text-justify">
+                    <li><strong class="text-slate-300">牙線與牙刷</strong>：鉛筆好歹是用天然木材與石墨組合。但牙刷的尼龍刷毛與牙線，是高度專精的<strong class="text-slate-300">聚合物工程</strong>。天才必須在荒野中原地蓋出一座石油裂解廠，提煉出環己烷，經過複雜的高溫高壓縮聚反應合成尼龍，再使用精密熔融擠出拉絲機，才能拉出直徑僅有微米級、高強度不分叉的塑料纖維。</li>
+                    <li><strong class="text-slate-300">牙膏</strong>：需要將摩擦劑（二氧化矽）精細研磨至奈米級以保護牙釉質，更必須在野外徒手提煉具備劇毒、極度活潑的微量<strong class="text-slate-300">氟化鈉</strong>，並將其嚴格控制在安全防蛀的百萬分之點（ppm）計量，這需要極致的定量化工控制。</li>
+                    <li><strong class="text-slate-300">衛生紙</strong>：絕非粗糙造紙。它需要在抄紙機運作時，利用精密刮刀與剝離劑進行微微秒級的動態配合，在紙張表面颳出細密的<strong class="text-slate-300">微孔起皺（Creping）</strong>，才能兼顧「保護黏膜的柔軟度」與「遇水即分散、不易堵塞」的公共衛生力學。</li>
+                    <li><strong class="text-slate-300">化糞池</strong>：為了確保 48 小時內不滲漏、不污染地下水源，現代化糞池需要抗高壓腐蝕的玻璃纖維強化塑膠（FRP），並涉及流體力學的多級沉澱流道與特異性厭氧微生物群落的定向培養。</li>
+                </ul>
+            </div>
+
             <p>
-                更致命的是現代工業無可替代的<strong>「工具祖先鏈」</strong>。想要切削木桿，需要精準的鋼刀；冶煉鋼鐵需要達 $1500^\circ\text{C}$ 的高爐；建造高爐需要開採煤炭、耐火磚與採掘工具。每一樣現代工具，背後都有無數原始工具的代代疊代。
+                現代工業是一個「工具有工具的祖先」，具備無限疊代鏈條的龐大系統。當一個個體傲慢地宣告全盤抗拒現代文明、試圖孤身回歸大自然時，他等於試圖用肉掌去對抗由現代化學、高分子材料與微觀醫學交織而成的鋼鐵防護牆。
             </p>
-            <p class="bg-slate-950 p-6 rounded-xl border border-slate-800 text-slate-300 font-medium">
+            <p class="bg-slate-950/40 p-6 rounded-xl border border-slate-800 text-slate-300 font-medium">
                 <i class="fa-solid fa-link-slash text-rose-400 mr-2"></i>
-                這位奧林匹亞金牌天才在沒有任何工具傳承的荒野中，必須被迫以肉掌與石器開始，獨自在幾十年的餘生中重新走完人類幾萬年的材料與技術演進史。這在物理時間、大腦容量與單一個體的體能極限上，都是絕對不可能實現的妄想。
+                無論大腦中裝著多麼完美的公式，缺乏了現代社會全球化分工的協作網路，任何單一的人類在殘酷的大自然面前，本質上都脆弱得不堪一擊。
             </p>
         </div>
     </div>
@@ -217,25 +243,27 @@
 
         <div class="space-y-6 text-sm md:text-base text-slate-400 leading-relaxed text-justify md:text-center max-w-3xl mx-auto mb-10">
             <p>
-                回到那場京都山區的悲劇。這位死去的美國大學生就讀於美國南部老牌名校<strong>奧本大學（Auburn University）</strong>。若以台灣的學術生態來做精準類比，奧本大學的排名與含金量<strong>大約相當於台灣的國立中興大學，或成功大學的工程／農醫背景老牌名校</strong>。它雖然是一所相當優質、培養出無數社會中堅的扎實名校，但客觀來看，其整體學術光環與錄取分數線，確實還未達到能輕鬆考上頂尖台大醫學系或金字塔最頂端醫學院的極端窄門等級。
+                回到那場京都山區的悲劇。這位死去的美國大學生就讀於美國南部老牌名校<strong>奧本大學（Auburn University）</strong>。若以台灣的學術生態來做精準類比，奧本大學的地位<strong>大約相當於國立中興大學或成功大學的工程／農醫背景名校</strong>。它是一所培養無數中堅份子的優質學府，但客觀而言，其錄取門檻與學術光環，仍未達到能輕鬆跨入頂尖醫學院或金字塔最頂端學術殿堂的等級。
             </p>
             <p>
-                然而，正是這樣一位天資與背景尚可、生活在現代高度發達溫室中的普通名校大學生，卻帶著盲目的道德優越感，去批判、抗拒他完全無法理解的現代科技。如果沒有現代工業與電力文明供應的乾淨水源、先進醫療、溫飽物資與全球資訊網絡，他甚至根本沒有機會健康地長大、坐在有冷氣的異國咖啡廳裡，去傲慢地爭論「AI 運算到底環不環保」。他連最頂尖醫學系的門檻都未必能摸到，卻天真地以為自己能脫離文明、靠一己之力在殘酷的真實荒野中存活。
+                然而，正是這樣一位天資尚可、生活在高度發達文明溫室中的大學生，卻帶著盲目的道德優越感，去批判他完全無法理解的現代科技。他以為大自然是溫柔的、AI 是累贅的，卻不知道他每天使用的牙線、牙刷、衛生紙，每一件背後的<strong class="text-slate-200">製造工藝與化學工程難度，甚至都全面超越了一支橫跨全球分工的鉛筆。</strong>他連維持生存最基本的公衛邏輯與化工壁壘都看不見，卻天真地以為自己能靠「回歸自然」在殘酷的荒野中活下去。
             </p>
+
             <div class="p-6 bg-slate-900/60 rounded-xl border border-slate-800 text-left text-slate-300 text-sm my-6 leading-relaxed">
                 <i class="fa-solid fa-layer-group text-teal-400 mr-2"></i><strong>從天才實驗到大眾現實：AI 抹平知識階級的底層邏輯</strong><br class="mb-1">
-                這項對比揭示了一個無比深刻的真相：連前面提到那位擁有「學測滿級分、六科奧賽金牌、全能智商與長跑國手體能」的頂尖超人，在斷絕文明工具的情況下，花上一輩子都造不出任何一支簡單的鉛筆；<strong>那麼，對於像這位奧本大學學生一樣、天資與體能都處於常態分佈的「現代大眾」而言，全盤否定文明與科技，更是一場徹頭徹尾的智力災難與生存自殺。</strong>
+                這項對比揭示了一個震撼的真相：連前面提到那位擁有「奧賽六金、全能智商與國手體能」的頂尖天才，在面對比鉛筆更複雜的聚合物工程（牙線）與化工控制（牙膏）時都無能為力；<strong>那麼，對於像這位奧本大學學生一樣、天資與體能處於常態分佈的「普通大眾」而言，全盤否定文明與 AI，無異於一場智力上的武斷自殺。</strong>
             </div>
+
             <p>
-                <strong class="text-slate-200">這正是為什麼，AI（人工智慧）的普及對現代大眾來說至關重要。</strong> 它的誕生絕非現代文明的無效累贅，而是人類智力、社會分工與資訊科技演進的最新最高成果。在如今資訊爆炸、跨領域知識高牆化的時代，一般大眾不需要具備奧賽金牌的智商，也沒必要成為全知全能的上帝，簡直可以說，<strong>只要我們學會善用 AI 這款終極文明工具，就能打破重重學門壁壘、高效跨越知識階級，讓普通人也能一個人化身為具備調度全球知識分工的強大實踐者。</strong>
+                <strong class="text-slate-200">這正是為什麼，AI（人工智慧）的普及對現代大眾來說具有神聖的重要性。</strong> 現代文明的複雜度（從微觀化學到宏觀全球供應鏈）早已超越了任何單一腦袋的負荷極限。AI 絕非消耗能源的贅肉，而是人類對抗這種「極度複雜化」的最新進化載體。它打破了知識的高牆，讓普通人不需要具備奧賽金牌的智商，也能調度全球的知識分工，理解並應用複雜的科學邏輯。
             </p>
             <p>
-                將現代科技盲目地妖魔化，並不會讓個體的靈魂顯得更高尚，反而是在主動削弱自己利用文明成果生存的權利。在當今這個技術叢林中，聰明且理性的現代人，不會選擇像那位奧本大學生一樣為了極端的宏大敘事與現實死磕，而是會**張開雙臂擁抱 AI，將其作為武裝自己知識、更新生產力、解構複雜現實的催化劑。**
+                將現代科技妖魔化並不會讓人顯得更高尚，反而是在主動剝離自己生存的防具。在當今這個技術叢林中，理性的現代人不會選擇像那位奧本大學生一樣與現實死磕，而是會**張開雙臂擁抱 AI，將其作為武裝自己知識、更新生產力、解構這充滿化工與物理壁壘之現實的「終極催化劑」。**
             </p>
         </div>
 
         <div class="text-xs md:text-sm font-bold tracking-widest text-teal-400 uppercase bg-teal-500/5 border border-teal-500/15 py-4 px-8 rounded-2xl inline-block max-w-2xl leading-relaxed">
-            科技與工具本身永遠是中性的。唯唯有當你務實地善用眼前的技術在文明體系裡強大生存時，你才有底氣與資格，去談論如何讓這個世界變得更好。
+            科技與工具本身永遠是中性的。唯有當你務實地善用眼前的技術在文明體系裡強大生存時，你才有底氣與資格，去談論如何讓這個世界變得更好。
         </div>
     </div>
 </section>
