@@ -249,6 +249,13 @@
     <li><strong>Shun Lau 搭配 <code>lowgravity</code> 的究極 100%→48% 連段：</strong> 如同少林利用低重力物理漏洞一樣，Shun Lau 搭配 <code>lowgravity</code> 也能化身戰場魔術師。在低重力環境下，對手不論往左或往右跳，都極易因為沒有重力拉回而一路飄移撞擊兩側牆面（此時不會反彈，因為是主動跳躍而非受擊）。此時在對手緩緩落下的瞬間，先在安全距離以長拳（前+拳）打亂對方重心使其定格浮空，隨即補上一記後踹（後+腳）。這一腳會將對手強力砸向牆壁並觸發受擊反彈，而你與反彈飛出的對手會空中發生座標交錯，讓你**零時差換位到對手的正後方**。此時立刻躺下發動必殺技，背刺吸附機制會瞬間啟動，在空中將對手一路黏著狂踢，<strong>直接將對手的血量從 100% 一口氣瘋狂削減至 48%</strong>，兼具極高的戰術效率與極致的視覺張力！<br>
         <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/nIpL20Cx_8Q?si=jveQ95MvByrXVh0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </li>
+    <li><strong>Master Cheng —— 佛山無影腳之全螢幕突進與交叉換位盲區：</strong> Master Cheng（鄭大師）的必殺技為多段持續流（防禦無效），其動作與 Master Kwun 的倒立旋風踢高度相似，兩者皆為連續高速踢擊、前進的同時附帶強大吸附判定框（Vacuum Hitbox）。與坤大師不同的是，鄭大師是**身體浮空並沿著水平線飛行**，其空間跨度極其驚人，能**從螢幕最左端完美起飛至最右端，且觸及最右側空氣牆時，其 Hitbox 判定仍會持續發動維持一陣子**。
+        <br><br>
+        經雙人模式實測，當鄭大師從最左側發動無影腳，精準命中停留在最右側物理空氣牆且無位移的 2P 對手時，能穩定灌進 10% 的多段基礎傷害。<strong>若利用精妙的距離操控，在兩人雙腳「一前一後且前腳剛好完美重疊」的臨界距離發動，該大招會觸發最大判定飽和，轟出高達 22% 的驚人殺傷力（超越 Master Kwun 達 2%）</strong>！然而，該大招存在嚴重的**貼身 X 軸座標交錯盲區（Cross-up Bug）**——由於格鬥代碼未做肉體體積碰撞阻擋，若雙方站位過於貼身接近，鄭大師極高的前進動量會使他的 X 座標直接穿透並越過對手，導致大招在身後揮空或判定縮水（僅剩 7% 傷害）。越位穿體後，鄭大師會將全裸的後背防禦盲區奉獻給對手，若遇上 Lo Ki 或 Dragon Master 這類具備指令投擒拿特權的魔王，落地瞬間會被強制抓住秒殺（對上龍大師即一命嗚呼）；對上傷口反彈的 Shun Lau 會被反向吸附重創 40%；對上少林則會硬生生吃下一記 33.4% 的爆頭戳屁股，具有極高風險。</li>
+
+    <li><strong>Red Flower —— 跑酷風暴打直剛體重擊：</strong> Red Flower（紅花）的必殺技屬於多段持續流（防禦無效），其動作表現為一邊前進一邊施展極具動態感的「後空翻迴旋」，視覺效果神似 YouTube 跑酷（Parkour）創作者的極限位移動作。
+        <br><br>
+        然而在底層 Flash 元件圖層上，紅花在旋轉期間**整個身體元件是完全打直前進、而非縮成一團**，這使她同時利用手、腳在空中形成一個巨大的圓形連續旋轉判定面（Active Hitbox）。<strong>經上述 Combo 逆向法實測，在雙方腳部保持「一前一後且前腳剛好重疊」的黃金排列組合距離下，該招式能觸發最大多段壓制，造成全常規角色中極其恐怖的 27% 爆發級傷害</strong>！但她同樣受制於貼身 X 軸座標穿體漏洞，若在零距離盲目開招，打直的剛體會直接越過對手座標而完全揮空，極度考驗資深高玩的距離感控制。</li>
     <li><strong>跨版本隱藏魔王機制補完與關卡替換邏輯：</strong>
         在《龍拳 2》標準版與平行宇宙擴充版本《Dragon Fist 2 Plus》中，均內建了三位隱藏 Boss 魔王。<strong>需要釐清的是，即使玩家玩的不是 Plus 擴充版，在主介面輸入正確的後台作弊密碼，依然能跨版本雙向解鎖並在雙人或訓練模式下自由操作這三位 Boss（High Priest 的作弊碼為 <code>bowbeforme</code>；Dragon Master 的作弊碼為 <code>iamadragon</code>；Dark Lord 的作弊碼為 <code>lordofdarkness</code>）。</strong>
         <br><br>
