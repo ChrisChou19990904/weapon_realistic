@@ -149,6 +149,7 @@
     <li><a href="#character_system_analysis">十四位常規角色的強弱點分析與破防效率流</a></li>
     <li><a href="#three_bosses">終極封印解禁：三大原生隱藏魔王機制補完與代碼審計</a></li>
     <li><a href="#four_new_characters_in_plus_version">擴充宇宙維度：Plus 版本與原始版本的核心變革與四神兵審計</a></li>
+    <li><a href="#three_hidden_characters">終極禁忌解鎖：三大深層隱藏角色審計與 Plus 版雙人內存崩塌 Bug</a></li>
     <li><a href="#why_dragon_fist_is_not_that_famous">美學霸權與現實邏輯的終極對撞：為什麼《龍拳 2》永遠是小眾神作？</a></li>
 </ul>
 <h2 id="introduction">前言</h2>
@@ -344,6 +345,47 @@
         <br><br>
         經資深高手目測實測，合星蹬腿的攻擊距離比少林大一點，在 Hitbox 空間跨度上與 Green Serpent（綠蛇）的電流屏障大體相同。<strong>然而他缺乏綠蛇長達 2 秒的延遲地雷等待機制，他的攻擊判定僅存在於雙腿蹬出的萬分之一秒瞬間，對精準度要求極高。為了補償此一零容錯率的幾何缺陷，系統賦予其 17% 的單發殺傷力（比綠蛇多出 3%）</strong>。幕防下該絕招極易被按「下」格擋，一擊揮空便會原地定格陷入僵直死角，使其同樣成為冷宮天梯榜裡的常客。</li>
 </ul>
+<h2 id="three_hidden_characters">終極禁忌解鎖：三大深層隱藏角色審計與 Plus 版雙人內存崩塌 Bug</h2>
+<p>除了通關模式中坐鎮的三大老魔王外，遊戲代碼深處還埋藏了三位不為人知的隱藏角色：<strong>Iron Monkey（鐵猴子）</strong>、<strong>Ice Queen（冰雪女王）</strong> 與 <strong>Fong（阿芳）</strong>。他們永遠不會作為對手出現在任何版本的通關模式中，且由於系統並未替他們編寫專屬的 <code>LEVEL CODE</code>（關卡密碼），<strong>玩家完全無法在避免被系統沒收名字改為 <code>cheater</code> 的情況下使用他們，必須強制承受反作弊字串覆寫懲罰。</strong></p>
+
+<p>以下為資深高玩針對這三位深層隱藏角色的底層物理常數與「武裝強制鎖定（Hard-locked Weapon）」機制的嚴謹審計：</p>
+
+<ul>
+    <li><strong>Iron Monkey —— 真正 100% 全螢幕突進與 17% 降維替代神兵：</strong> <br>
+        作弊解鎖碼為 <code>ironmonkey</code>。他的預設武器被底層代碼強制鎖定為<strong>鐵鍊</strong>，且玩家在選人畫面完全無法變更別的武器。其必殺技屬於第一流派（防禦有效），發動時會施展真正橫跨 100% 完整螢幕跨度的極限橫向突進。
+        <br><br>
+        <strong>在幾何判定上，他與 Wu Tang 有著本質上的代碼特權差異：武當的突進僅是「幾乎」移動整個螢幕（位移接近1而非絕對1），這導致武當從螢幕最左端起飛時，在幾何邊界上是完全打不到最右端空氣牆邊緣的對手的（儘管視覺殘影看起來有接觸到）；但鐵猴子則是真正實作了全螢幕物理位移，敵人躲無可躲。</strong>
+        <br><br>
+        突進精準命中對手後，其身體會整體往後傾斜，同時腳部向上踹擊，將對手以極高動量水平彈飛。<strong>經實測其大招殺傷力為 17%</strong>。就殺傷力與絕對全螢幕位移而言，他完全具備了將 Wu Tang（14%）與 Dragon Soldier（17%但僅有半屏位移）徹底降維取代的恐怖統體力，這也是他被官方打入深層隱藏代碼、不允許出現在常規天梯的根本原因。</li>
+
+    <li><strong>Ice Queen —— 紅花貼皮複製人與 27% 極限距離排列組合爆發：</strong> <br>
+        作弊解鎖碼為 <code>icequeen</code>。她的預設武器被強制鎖定為 Master Kwun 的<strong>短柄大刀</strong>，同樣不允許玩家更換。在美術元件上，<strong>她與 Hidoshi 是相同的「貼皮複用」邏輯，本質上只是將 Red Flower（紅花）的 Movie Clip 元件原封不動地在代碼中更換濾鏡顏色（髮色與衣服變為藍色，但眼睛依舊保留原本魔性的紅色）。</strong>
+        <br><br>
+        其必殺技屬於第一流派（防禦有效），動作為水平飛行並在空中連續踢擊兩下，視覺軌跡與 Hidoshi 相似，但其移動距離比 Hidoshi 短。<strong>經 Combo 面板逆向代數推導，冰雪女王的第一踢具備 14% 的重創傷害，第二踢具備 13% 的傷害，兩段多段重疊飽和時最大殺傷力高達恐怖的 27%！</strong> 雖然這招與紅花的原生大招一樣，極度吃雙方腳掌一前一後完美重疊的排列組合運氣，但其輸出期望值遠遠碾壓了 Hidoshi（最高 14%）的刮痧立定跳。</li>
+
+    <li><strong>Fong —— 無必殺技的訓練沙包與全遊戲最底層的冗餘廢柴：</strong> <br>
+        作弊解鎖碼為 <code>iamfong</code>。阿芳本質上是系統內建在「訓練模式（Training Mode）」下供玩家測試 Combo 連擊的沙包角色。在代碼封裝中，<strong>官方完全未賦予他任何必殺技（即無法使用任何特殊招式）</strong>，且其預設武器被死死鎖定為<strong>青龍偃月刀</strong>且不允許更換。
+        <br><br>
+        由於青龍偃月刀在大尺寸武器博弈中存在致命的轉動慣量盲區，揮空即陷入超長定格硬直，且殺傷力與速度低劣，在完全沒有必殺技防身的情況下，阿芳在實戰中的綜合性能甚至比長年被打入冷宮的 Tang Mo Kei（鄧茂基）還要差，是全遊戲底層毫無博弈價值的冗餘代碼。</li>
+</ul>
+
+<h3>平行宇宙的記憶體崩塌：Plus 版本雙人模式下的肉體置換奇觀</h3>
+<p>在原始版本中，系統的角色陣列映射非常健全。不論在闖關模式、訓練模式還是雙人對決模式中，只要在 <code>CHEATCODE</code> 依序輸入這六組代碼，調用出來的角色均能百分之百精準對應：<code>ironmonkey</code> 載入 Iron Monkey、<code>icequeen</code> 載入 Ice Queen、<code>iamfong</code> 載入 Fong、<code>iamthemaster</code> 載入 Dragon Master、<code>lordofdarkness</code> 載入 Dark Lord、<code>bowbeforme</code> 載入 High Priest。</p>
+
+<p><strong>然而，當這套初始化邏輯跨入 Plus 版本時，卻在「雙人對決模式（2 Player Mode）」中引發了驚天動地的內存陣列指針錯位 Bug！</strong></p>
+
+<p>經資深高玩極限測試證實，在 Plus 版本中，當你在主選單輸入上述作弊碼後，<strong>闖關模式（Arcade）與訓練模式（Training）下的角色依舊能正常保持原樣；但一旦你跨入雙人對決模式，系統的角色 ID 指針就會發生不可逆的陣列覆蓋錯位，但最滑稽的是，原本隱藏角色被硬性鎖定的「專屬武器 Flag 卻在記憶體中頑固殘留」！</strong> 這直接導致了以下六大肉體與武裝嚴重錯亂的邪典視覺奇觀：</p>
+
+<ol>
+    <li>輸入 <code>ironmonkey</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>High Priest（高階祭司）</strong>，但他手上卻拿著 Iron Monkey 原生專屬且無法更換的<strong>鐵鍊</strong>！</li>
+    <li>輸入 <code>icequeen</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>Dragon Master（龍大師）</strong>，但他手上卻握著 Ice Queen 原生專屬的 <strong>短柄大刀</strong>！</li>
+    <li>輸入 <code>iamfong</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>Hidoshi Shinadori</strong>，但他手上卻揮舞著 Fong 原生專屬且最無用的 <strong>青龍偃月刀</strong>！</li>
+    <li>輸入 <code>iamthemaster</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>Blue Dragon（藍龍）</strong>，且如同大魔王般<strong>沒有任何武器（純肉搏）</strong>。</li>
+    <li>輸入 <code>lordofdarkness</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>Hop Sing（合星）</strong>，但他手上卻強大且滑稽地配備著黑暗領主的專屬作弊長劍 <strong>Dragon Blade（龍刃）</strong>！</li>
+    <li>輸入 <code>bowbeforme</code>：雙人對決中，角色肉體會被錯位置換變成 <strong>Sifu Tang（唐師父）</strong>，且<strong>沒有任何武器</strong>。</li>
+</ol>
+
+<p>這套神級漏洞再次百分之百證實了，Ben Olding Games 在編寫 Plus 版本的 2P 雙人記憶體指針時，其隱藏角色陣列與武器 Boolean 標記的防禦架構徹底崩塌。這讓老手在雙人模式下，能享受這種讓高階祭司拿鐵鍊、合星提著龍刃正面對劈的終極數據狂歡！</p>
 <h2 id="why_dragon_fist_is_not_that_famous">美學霸權與現實邏輯的終極對撞：為什麼《龍拳 2》永遠是小眾神作？</h2>
 <p>在流行文化、文學與藝術創作的浩瀚星空中，存在一個顛撲不破的潛規則：<strong>「視覺效果與審美紅利，往往比是否講求現實邏輯更關鍵。」</strong>為了迎合大眾的眼睛，歷史、物理甚至考古學的真相經常被無情扭曲。我們可以用以下三個經典的「美麗謊言」來剖析這套視覺霸權的運作邏輯：</p>
 <ul>
