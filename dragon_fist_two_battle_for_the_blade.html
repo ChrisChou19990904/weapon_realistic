@@ -138,9 +138,22 @@
     </nav>
 </header>
 <h1>《Dragon Fist Two: Battle for the Blade》的武器機制</h1>
-
+<h2>目錄</h2>
+隨便點選下方其中一個主題便能直接跳到該主題的說明區域
+<ul>
+    <li><a href="#introduction">前言</a></li>
+    <li><a href="#weapon_comparison">Dragon Fist裡的常規武器比較</a></li>
+    <li><a href="#about_dragon_blade">補充說明：並非所有大尺寸武器都是攻擊範圍高但殺傷力和防禦力低 - 以Dragon Blade為例</a></li>
+    <li><a href="#three_key_weapons">核心常規神兵：資深老手不可動搖的三大武器選擇</a></li>
+    <li><a href="#juggling">延伸機制解析：硬核物理模擬與「空中踢毽子」連擊系統（Juggling）</a></li>
+    <li><a href="#character_system_analysis">十四位常規角色的強弱點分析與破防效率流</a></li>
+    <li><a href="#three_bosses">終極封印解禁：三大原生隱藏魔王機制補完與代碼審計</a></li>
+    <li><a href="#four_new_characters_in_plus_version">擴充宇宙維度：Plus 版本與原始版本的核心變革與四神兵審計</a></li>
+    <li><a href="#why_dragon_fist_is_not_that_famous">美學霸權與現實邏輯的終極對撞：為什麼《龍拳 2》永遠是小眾神作？</a></li>
+</ul>
+<h2 id="introduction">前言</h2>
 <p><a href="index.html" target="_blank">首頁</a>展示姑娘表演雙節棍打到自己，這樣的視頻向我們展示了雙節棍其實是中看不中用的武器。除此之外，在遊戲、動畫、電視劇、小說等媒體中，許多氣勢磅礴的武器，例如流星錘、青龍偃月刀、月牙鏟、長槍等，實際上在戰場上也並不實用。</p>
-
+<h2 id="weapon_comparison">Dragon Fist裡的常規武器比較</h2>
 <p>當我初次接觸《Dragon Fist Two: Battle for the Blade》這款雙人格鬥遊戲時，看到武器選擇區的青龍偃月刀、月牙鏟、雙節棍、長槍等武器，我感到非常興奮，並且經常使用它們。同時，我也認為短柄大刀和忍者刀這些尺寸較小的武器根本沒用。打隨著遊戲時間的增長，我才發現短柄大刀和忍者刀其實是遊戲裡殺傷力、速度和防禦力最強的武器（如果不包含Automatic Shotgun和Dragon Blade這兩個需輸入作弊碼才能使用的武器的話）。因為它們能夠完全防止遊戲中大魔王Dragon Master對你使用必殺技，同時不斷消耗對方血量直到對方被KO（Dragon Master的必殺技是抓住玩家後把心臟挖出，玩家一旦被抓住就會立刻被秒殺）。</p>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/mO039CXftgM?si=4n3Lm1cFxuaKCZ1m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/jDQMtsoj7P4?si=NSCU7QpothCEyjx5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
@@ -153,7 +166,7 @@
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/x76rW4xe4uM?si=blYJaCnqOJ_iOcJx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <p>整體來看，<a href="https://www.facebook.com/BenOldingGames/" target="_blank">Ben Olding Games</a>在設計這些武器時，確實非常用心。每種武器都有其獨特之處，大尺寸武器攻擊範圍較大，但速度、殺傷力和防禦力較弱，而小尺寸武器則在速度、殺傷力和防禦力上表現更強。然而，當你對這遊戲熟悉到一定程度時，你最終會發現，小尺寸武器在綜合層面上往往能夠完全取代大尺寸武器，因此幾乎所有大尺寸武器的存在對資深玩家來說完全是多餘的。</p>
 
-<h2>補充說明：並非所有大尺寸武器都是攻擊範圍高但殺傷力和防禦力低<br> - 以Dragon Blade為例</h2>
+<h2 id="about_dragon_blade">補充說明：並非所有大尺寸武器都是攻擊範圍高但殺傷力和防禦力低<br> - 以Dragon Blade為例</h2>
 <p>正如我在<a href="index.html#theme_of_sword" target="_blank">首頁的主題四</a>提到的，長劍不只外觀好看實用性也很高，因為它們的情況是握柄短但刀刃長，不像青龍偃月刀和長槍是握柄長但刀刃短，更不像雙節棍、流星錘、三節棍那樣會很容易打到使用者自己。</p>
 <p>因此，<a href="https://www.benoldinggames.com/" target="_blank">Ben Oldings Game</a>為了還原長劍在現實中殺傷力強的事實，他們也設計出一把需要輸入作弊密碼"THESWORDISMINE"才能使用的武器，名為Dragon Blade. 當然，你也可以進入CHEATCODE並輸入作弊密碼"lordofdarkness"（或進入通關模式後在右上角的LEVEL CODE輸入"Q8G2HJD1A"），但這樣一來你就只能使用Dark Lord而不能選擇其他角色。</p>
 <p>Dragon Blade的速度不但快且殺傷力也很大，刀刃的部分幕是比其他武器長不少，可以完全防止Dragon Master靠近玩家。</p>
@@ -162,7 +175,7 @@
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Y2kp8At6FFo?si=K0lPB9OyyFeEEkNy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/ZpVadholMHg?si=Ge6N2svhLFpxRKS1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
 
-<h2>核心常規神兵：資深老手不可動搖的三大武器選擇</h2>
+<h2 id="three_key_weapons">核心常規神兵：資深老手不可動搖的三大武器選擇</h2>
 <p>在排除需要輸入作弊密碼才能解鎖的步槍（Automatic Shotgun）與專屬長劍（Dragon Blade）這兩個打破常規數據的平衡破壞者後，資深玩家在無數次實戰博弈中所淘汰篩選出來的常規武器，最終僅會聚焦於<strong>鐵鍊</strong>、<strong>短柄大刀</strong>與<strong>忍者刀</strong>這三件最喜愛的靈魂神兵。<strong>需要注意的是，系統中每個角色都有屬於自己的「預設武器」（例如短柄大刀是 Master Kwun 的預設武器，忍者刀則是 Ninja 的預設武器）。在通關模式下，AI 對手會被強制鎖定只能使用自己的預設武器；但無論在通關、訓練還是雙人對決模式中，玩家均可依照自己的戰術喜好任意變更武器配置。</strong> 在摸透底層機制後，其餘大尺寸的常規兵器因性能缺陷，在老手眼裡基本上都是可有可無的冗餘存在：</p>
 <ul>
     <li><strong>鐵鍊 —— 極致的空間死角鎖死（無限段牆角流）：</strong> 雖然它在基本數值與防禦表現上偏低，但它具備全遊戲無可取代的「強制倒地壓制」代碼判定。只要資深玩家成功將對手引導至牆角，配合「後退+拳」的連招，即可利用地形的邊界彈性碰撞。<strong>經實測推導，鐵鍊連續勾倒人的確切殺傷力為 6.6%。這意味著在雙人對決模式中，當老手利用牆角將滿血（100%）的對手連續完美勾倒 15 次時，對方的血量將不偏不倚「剛剛好徹底扣光（6.6% × 15 = 99% 趨近 100% 臨界值）」並觸發面容重置，具備極高的數據美學實證。</strong></li>
@@ -171,7 +184,7 @@
         相比之下，大尺寸武器存在嚴重的轉動慣量盲區，一擊揮空便會產生超長定格，且一旦被魔王跨越刀頭切入「內圈」長柄處，便會因缺乏傷害判定（Hitbox盲區）而直接淪為大魔王 Dragon Master 挖心秒殺的活靶子。相反地，短柄大刀與忍者刀攻速極快、重心就在手心附近，在貼身肉搏時能在最短時間內不斷進行高速反切截擊、中斷對手的擒拿必殺技起手，並無縫融入「空中踢毽子」的極限壓制流，這使其成為資深高手對決時的最愛。</li>
 </ul>
 
-<h2>延伸機制解析：硬核物理模擬與「空中踢毽子」連擊系統（Juggling）</h2>
+<h2 id="juggling">延伸機制解析：硬核物理模擬與「空中踢毽子」連擊系統（Juggling）</h2>
 <p>除了豐富的武器相剋與平衡設計，這款遊戲最令資深玩家著迷的，莫過於其獨特且硬核的<strong>底層物理碰撞與滯空連擊系統</strong>。這種類似「踢毽子」的打法，在格鬥遊戲圈中通常被稱為 <code>Air Juggle</code>（空中連擊）或 <code>Corpse Juggling</code>。展現了與《格鬥天王 KOF》或《快打旋風 Street Fighter》截然不同的硬核操作深度：</p>
 
 <ul>
@@ -192,7 +205,7 @@
 </ul>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Tzpnj6PPX5M?si=PxUJpjsXW4dJWmG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<h2>高級角色戰術與破防效率流</h2>
+<h2 id="character_system_analysis">十四位常規角色的強弱點分析與破防效率流</h2>
 <p>雖然遊戲中提供十四位常規角色供選擇，但為了追求通關效率與破壞力，老玩家基本上只會聚焦於 <strong>Lo Ki</strong> 與 <strong>Chingamy Yip</strong> 這兩個角色，關鍵就在於他們的必殺技具備「無法被常規防禦」的底層機制。在遊戲中，按方向鍵「下」是防禦，而所有角色的必殺技大體可劃分為以下兩種流派：</p>
 
 <ol>
@@ -200,7 +213,7 @@
     <li><strong>多段持續流（防禦無效）：</strong> 這一類招式由連續多次的快速攻擊組成，單次傷害雖小，但累積下來極其可觀，且能完全貫穿對手的防禦模式。代表角色包括：Master Kwun、Master Cheng、Shun Lau、Red Flower、Chingamy Yip、Ninja 等。</li>
 </ol>
 
-<p>以下為資深玩家針對大部分角色的強弱點與使用機制的詳細分析：</p>
+<p>以下為資深玩家針對十四位常規角色的強弱點與使用機制的詳細分析：</p>
 
 <ul>
     <li><strong>Lo Ki —— 指令投強制破防與 25% 殘血逆轉：</strong> 嚴格來說，Lo Ki 的必殺技雖然屬於第一種單發型，但他最恐怖的地方在於<strong>在真正發動攻擊前會先伸出雙手抓住人（類似柔道的擒拿）</strong>。這個「抓取」判定直接凌駕於系統的防禦邏輯之上，能強行破開對手的下防。經上述 Combo 逆向法實測，<strong>Lo Ki 的必殺技單發傷害高達 19%</strong>。許多資深玩家極其熱衷於使用 Lo Ki 抓人打飛後、在空中展開「踢毽子」的高難度滯空表演，甚至能達成從滿血一氣痕成連擊至死極限。作者本人便曾利用此招，在自身血條僅剩 25% 且對手仍有 90% 以上血量的極端劣勢下，一口氣完成驚天大反敗（此實戰 Shorts 影片上傳後獲得超過 400 次觀看）。</li>
@@ -265,21 +278,66 @@
         <strong>然而經資深老手極限距離實測，當對手死死靠在牆壁上且原地跳躍時，黃舒的黃蜂術能強行觸發二段碰撞，追加一記 5% 的補償判定，轟出高達 19% 的極限排列組合殺傷力</strong>！此外，若與對手保持微小間距（不貼死狀態），可在長出能量棒飛起的 Startup 瞬間蹭到對手，隨後縮回能量棒並以後撤前空翻的軌跡緩緩落下。但由於距離極難拿捏且防禦成本極低，使他成為老手眼裡不折不扣的「冷宮常客」。
         <br><br>
         <strong>這招在開啟低重力狀態（輸入作弊密碼 lowgravity）時，更會演變成一場代碼級的災難</strong>：黃舒會因為重力加速度大減而直衝螢幕天花板，且其水平位移會遠遠超越單屏限制。當他飛抵最左（右）側物理空氣牆時，因不屬於受擊狀態而無法觸發邊界反彈，<strong>整個身體元件會死死貼著牆壁沿著 X 軸死角「極其緩慢地滑落」</strong>。此時對手早已繞背在其身後（座標重疊外圈）好整以暇地準備偷襲，使黃舒淪為徹頭徹尾的沙包。這正是資深玩家在低重力模式下對決 Wong Su 時，能夠輕鬆達成「無傷 0 扣血完封」的底層物理漏洞。</li>
-    <li><strong>跨版本隱藏魔王機制補完與關卡替換邏輯：</strong>
-        在《龍拳 2》標準版與平行宇宙擴充版本《Dragon Fist 2 Plus》中，均內建了三位隱藏 Boss 魔王。<strong>需要釐清的是，即使玩家玩的不是 Plus 擴充版，在主介面輸入正確的後台作弊密碼，依然能跨版本雙向解鎖並在雙人或訓練模式下自由操作這三位 Boss（High Priest 的作弊碼為 <code>bowbeforme</code>；Dragon Master 的作弊碼為 <code>iamthemaster</code>；Dark Lord 的作弊碼為 <code>lordofdarkness</code>）。</strong>
+</ul>
+<h2 id="three_bosses">終極封印解禁：三大原生隱藏魔王機制補完與代碼審計</h2>
+<p>無論是在原始標準版還是 Plus 擴充版本中，只要玩家在主介面的 <code>CHEATCODE</code> 內輸入正確的後台作弊密碼，依然能跨版本雙向解鎖並在雙人對決或訓練模式下自由操作這三位 Boss。雖然他們在 Plus 版本的通關模式中被撤出了戰鬥鏈，但他們原生的底層代碼、絕對秒殺特權與蒸發級傷害數值依舊在記憶體中保留，其硬核數值表現如下：</p>
+
+<ul>
+    <li><strong>High Priest（高階祭司） —— 盲盒隨機必殺與極低實戰效益：</strong> <br>
+        高階祭司的作弊碼為 <code>bowbeforme</code>。其特色為能量滿點後按下（拳+腳）組合鍵，系統會隨機從十幾位常規角色中強行調用任意一個必殺技。這種完全無法預測的「盲盒隨機性」導致在實戰中極不可靠。在講求絕對控場與通關時效的資深老手眼中，他與 Tang Mo Kei（鄧茂基）一樣缺乏戰術博弈價值，屬於純粹觀賞用的冷宮魔王。</li>
+
+    <li><strong>Dragon Master（龍大師） —— 絕對指令投秒殺與連擊樂趣沒收者：</strong> <br>
+        龍大師的作弊碼為 <code>iamthemaster</code>。他本質上是將 Lo Ki 的擒拿必殺技修改為絕對秒殺的「挖心」判定。該招式直接凌駕於系統的防禦邏輯與血量定數之上，玩家一旦被他雙手抓住就會觸發一擊必殺。雖然他的通關破壞力與壓迫感極強，但也因為這種無賴的一擊秒殺代碼，大幅降低了格鬥博弈與死後「空中踢毽子」鞭屍刷 Combo 分數的技術樂趣，硬核玩家通常不屑於使用。</li>
+
+    <li><strong>Dark Lord（黑暗領主） —— 33.4% 蒸發級黑火輕功與貼身穿體盲區：</strong> <br>
+        黑暗領主在未配備 Dragon Blade（龍刃）時，其常規必殺技屬於第一流派（防禦有效），作弊碼為 <code>lordofdarkness</code>。發動時他會用輕功在地面進行水平橫向飛行，並以雙掌散發紅光劈砍對手。<strong>經由歸零重置美術 Bug 實測，該大招傷害高達與少林同級的 33.4% 蒸發級傷害</strong>！與少林「手短且原地不動」的致命缺點相比，黑暗領主的橫向輕功擁有近乎全螢幕的強大突進位移與極快的位移速度。
         <br><br>
-        而這兩個版本在「通關模式」上的核心差異在於底層的對決關卡置換公式：原標準版的通關梯隊終點是由這三位 Boss 親自坐鎮；<strong>但在 Plus 擴充版本中，這三位 Boss 完全被撤出了通關戰鬥鏈，改由 Sifu Tang、Blue Dragon、Hop Sing 這三位全新角色取代。最有趣的是，這三位在 Plus 通關模式中取代魔王地位的新角色，本質上在遊戲一開始就是不需要任何作弊碼就能直接在選人畫面使用的基礎常規角色。</strong> 儘管如此，隱藏魔王們原生的底層代碼與傷害數值依舊保留，表現如下：
+        就算玩家沒有在選單後台輸入 <code>lowgravity</code> 作弊碼來人為拉長對手受擊後的空中滯留時間，Dark Lord 恐怖的速度也快到足以在對手自由落體摔落地面之前，好整以暇地直接補上下一發攻擊。然而，該大招存在嚴重的 <strong>貼身 X 軸座標穿體盲區（Cross-up Bug）</strong>——由於 2D Flash 引擎缺乏肉體體積碰撞阻擋，若玩家與對手靠得太近盲目開招，黑暗領主會直接穿透越位至對手正後方，導致紅光劈砍完全揮空，在講求控場的老手眼中屬於需要精準拿捏距離的雙刃劍。若要搭配低重力通關，必須先在主選單 CHEATCODE 輸入 "lowgravity"，再進入單人模式於 LEVEL CODE 輸入 "Q8G2HJD1A" 進行代碼調用。</li>
+</ul>
+<h2 id="four_new_characters_in_plus_version">擴充宇宙維度：Plus 版本與原始版本的核心變革與四神兵審計</h2>
+<p>在許多輕度玩家眼裡，《Dragon Fist Two》的原始版與平行擴充宇宙版（Plus 版）似乎只是多加了四個角色，但對於熱衷解構代碼的高手來說，這兩個版本在底層關卡指針（Pointer）、反作弊監聽器以及記憶體映射上，有著極其滑憩且硬核的本質差異：</p>
+
+<ul>
+    <li><strong>關卡梯隊大換血（18回 vs 21回）：</strong> <br>
+        原始版本總共只有 18 個關卡，其最終倒數三個關卡是由 High Priest（高階祭司）、Dragon Master（龍大師）、Dark Lord（黑暗領主）這三位實力極其殘虐、動輒秒殺挖心的隱藏魔王親自坐鎮，通關成本極高。
         <br><br>
-        (1) <strong>High Priest（高階祭司）：</strong> 其特色為能量滿點後按下（拳+腳）組合鍵，可隨機使出十幾位常規角色中的任意必殺技。這種完全無法預測的「盲盒隨機性」導致實戰極不可靠，在講求效率的老手眼中與 Tang Mo Kei 一樣缺乏價值。
-        <br>
-        (2) <strong>Dragon Master（龍大師）：</strong> 本質上是將 Lo Ki 的擒拿必殺技修改為絕對秒殺的「挖心」，雖通關破壞力極強，但也因一擊必殺而大幅降低了格鬥與滯空連擊的博弈樂趣，不建議硬核玩家使用。
-        <br>
-    <li>(3) <strong>Dark Lord（黑暗領主） —— 蒸發級黑火輕功與貼身 X 軸座標交錯盲區：</strong> Dark Lord 的必殺技屬於第一流派（防禦有效），發動時會用輕功在地面進行水平橫向飛行，並以雙掌散發紅光劈砍對手。<strong>經由歸零重置美術 Bug 實測，該大招傷害高達與少林同級的 33.4% 邊發級傷害</strong>！與少林「手短且原地不動」的致命缺點相比，黑暗領主擁有近乎全螢幕的強大突進位移與極快的位移速度。
+        相反地，Plus 版本將通關模式（Arcade Mode）拉長到了 21 個關卡，但 Ben Olding 在倒數三關（第 19、20、21 回）中，卻直接把這三位老魔王徹底撤出戰鬥鏈，改由新登場的 Sifu Tang、Blue Dragon、Hop Sing 來守門。最滑稽的是，這三位在 Plus 版名列最終 Boss 梯隊的角色，本質上在遊戲一開始就是不需要密碼就能自由選用的「常規角色」，這使得 Plus 版後半段的通關難度反而比原版容易應付得多。</li>
+
+    <li><strong>「CHEATER」字串強制覆寫與合法偷渡漏洞：</strong> <br>
+        系統在 <code>CHEATCODE</code>（作弊密碼）攔位中內建了一個極其嚴苛的輸入監聽器。只要你在此欄位輸入任何字母或數字——<strong>不管該作弊密碼到底有沒有生效，甚至是不小心拼錯一個字</strong>——監聽器一旦觸發，就會直接沒收你的名字，將你在闖關模式與練習模式下的自訂名稱強制覆寫為 <code>cheater</code>。
         <br><br>
-        就算玩家沒有在選單後台輸入 <code>lowgravity</code> 作弊碼來人為拉長對手受擊後的空中滯留時間，Dark Lord  native 的恐怖速度也快到足以在對手自由落體摔落地面之前，好整以暇地直接補上下一發攻擊。然而，該大招存在嚴重的 **貼身 X 軸座標穿體盲區（Cross-up Bug）**——由於 2D Flash 引擎缺乏肉體體積碰撞阻擋，若玩家與對手靠得太近盲目開招，黑暗領主會直接穿透越位至對手正後方，導致紅光劈砍完全挥空，在講求控場的老手眼中屬於需要精準拿捏距離的雙刃劍。若要搭配低重力通關，必須先在主選單 CHEATCODE 輸入 "lowgravity"，再進入單人模式於 LEVEL CODE 輸入 "Q8G2HJD1A" 進行代碼調用。</li>
+        然而，資深高手可利用 <code>LEVEL CODE</code>（關卡密碼）完美繞過此防判定機制：在進入遊戲時先在闖關模式取好名字（絕對不碰 CHEATCODE 選單），接著直接在 LEVEL CODE 輸入原版龍大師（<code>Q9C2HMN1N</code>）或黑暗領主（<code>Q8G2HJD1A</code>）的過關密碼。由於系統未偵測到作弊欄位變更，你就能帶著自己的尊姓大名「合法偷渡」直奔最終梯隊，在通關留名時具備極高的高玩美學。</li>
+
+    <li><strong>內存覆蓋指針錯位 Bug（Level Code Mapping Bug）：</strong> <br>
+        這是 Plus 版本最著名的代碼封裝失誤。當玩家在 Plus 版的 LEVEL CODE 畫面中，熟練地輸入原版龍大師（<code>Q9C2HMN1N</code>）或黑暗領主（<code>Q8G2HJD1A</code>）的經典密碼時，系統的內存覆蓋指針卻會因為關卡編號未重新重定向，<strong>直接發生錯位，把你操控的角色強行置換變成 Blue Dragon（藍龍）與 Hop Sing（合星），而不是原版的龍大師與黑暗領主</strong>。
+        <br><br>
+        若此時你想要強行調用 Dark Lord 或 Dragon Master，並疊加 <code>lowgravity</code>（低重力）、<code>theswordismine</code>（龍刃）或 <code>automaticshotgun</code>（步槍）等作弊加成，你必須在主選單先輸入完這些作弊碼，再立刻進入 LEVEL CODE 輸入密碼才能成功重寫內存。</li>
 </ul>
 
-<h2>美學霸權與現實邏輯的終極對撞：為什麼《龍拳 2》永遠是小眾神作？</h2>
+<p>以下為資深玩家針對 Plus 版本全新調用的四位常規神兵，在底層物理判定與 Hitbox 盲區上的最嚴謹審計報告：</p>
+
+<ul>
+    <li><strong>Blue Dragon —— 飛機降落式多段摩擦與極限 20% 鐵鍊鎖死流：</strong> Blue Dragon（藍龍）的必殺技屬於第二種多段持續流（防禦無效），是四位 Plus 新增角色中實戰天梯強度的至高天花板。開招時他會先原地垂直浮空飛行（比常規跳躍稍矮一點點），隨後全身化為如 Wu Tang 超人雙拳伸直的水平滑翔姿勢，像飛機降落般斜向斜砸摩擦對手，並自帶強大的多段吸附判定框（Vacuum Hitbox），若距離過於貼身接近亦會因 X 軸肉體阻擋缺失而穿體繞背。
+        <br><br>
+        <strong>經實測，藍龍這套飛機擦人流的最大飽和殺傷力為 20%，觸發條件為雙方均擺出雙腳一前一後、且前腳腳掌剛好越過彼此 X 軸座標位置多一點點的臨界距離</strong>。雖然他的絕招傷害常數與 Master Kwun（20%）完全相同，但因其必殺技極度依賴距離的排列組合運氣，不若坤大師貼身零距離重合鎖定那般穩定。
+        <br><br>
+        <strong>然而在 lowgravity（低重力）環境下，藍龍會直接陷入代碼劣勢</strong>：他的浮空高度會被物理公式失真拉高，滑翔降落的時間被嚴重拖長，產生超長的滯空定格破綻。老手只需在地面盯緊影子，即可在其緩緩降落的下落硬直死角瘋狂「鞭屍」，大幅突破全服最高 Combo 連擊與傷害紀錄。
+        <br><br>
+        相較於坤大師，藍龍的巨大隱藏優勢在於**他完全沒有坤大師身上那套「受擊動量過大」的 Bug**。當老手為藍龍配備鐵鍊時，在牆角使出「後退+拳」的勾倒連段，對手砸向牆壁後不會觸發劇烈的反彈作用力，不會像坤大師那樣把屍體震飛到自己身後中斷壓制，能實施百分之百完美的無縫牆角絕對壓制鏈。加上 Plus 版通關模式移除了秒殺魔王 Dragon Master（無須特意換短刀提防挖心，僅需換短刀提防 Lo Ki 的破防投），使「藍龍+鐵鍊」成為不依賴作弊碼打穿 21 回通關的最強常規效率打法。缺點是搭配步槍作弊碼時，無法像坤大師那樣利用倒地上浮 Bug 觸發無限子彈追擊壓制，這也是所有常規角色與坤大師相比的通病。</li>
+
+    <li><strong>Hidoshi Shinadori —— 素材複用貼皮與極度雞肋的 14% 立定跳遠：</strong> Hidoshi Shinadori 與 Ninja、Onochi Takahashi（高橋小野）一樣是來自日本的角色。然而在底層 Flash 圖層上，他本質上只是將高橋小野的長相原封不動複製，僅在代碼中更改了衣服顏色與頭髮形狀的「貼皮角色」。其必殺技屬於第一流派（防禦有效），動作表現為向前立定跳遠半個螢幕的同時在空中連踢兩下。
+        <br><br>
+        <strong>經 Combo 面板逆向實測，其必殺技每一下踢擊的基礎殺傷力均被鎖死在 7%，這意味著在極其嚴苛的距離排列組合運氣下，最高才能造成 14% 的滿額傷害</strong>。由於該技能在多數實戰情況下只能蹭到一下（7%傷害），且極易被防禦完全化解，導致其輸出期望值甚至遠遠不及常規肉搏的上鉤拳（11%）或普通的跳踢與後踢（7%）。即使作為 Plus 版本的新角色，因其最高風險換取最低回報的低效代碼設計，使其與 Tang Mo Kei、Wong Su 一起被資深玩家打入冷宮。</li>
+
+    <li><strong>Sifu Tang —— 唐師父之原地 17% 後踢與冷宮盲區：</strong> Sifu Tang（唐師父）的必殺技屬於第一流派（防禦有效），發動時會施展跆拳道的直線後踢動作（由於 2D Flash 剛體骨架限制，畫面無法呈現完整的轉胯扭腰後旋踢軌跡，僅表現為硬生生向後踹擊），命中時可將對手強力踢飛。
+        <br><br>
+        <strong>經實測推導，唐師父此記後踢的確切殺傷力高達 17%，其攻擊的空間判定範圍與 Hop Sing（合星）完全相同</strong>。雖然具備高傷害，但該絕招存在嚴重的原地釋放硬傷——在招式執行期間系統不給予任何橫向位移。除了攻擊肢體姿勢與合星不同外，在底層數值、破防成本與長收招硬直上，唐師父完全缺乏獨立的戰術優勢且極易被按「下」格擋，一擊揮空便會淪為老手黏上去賞一套空中連擊的完美靶子，屬於長年被打入冷宮深處的冗餘角色。</li>
+
+    <li><strong>Hop Sing —— 原地蹬飛之幾何盲區與 17% 零容錯率懲罰：</strong> Hop Sing（合星）的必殺技屬於第一流派（防禦有效），發動時身體會原地跳起並用雙腿將人強力蹬飛。該招式在空間幾何上存在與少林（Shao Lin）、唐師父完全相同的致命硬傷——<strong>原地不動，在發動期間系統不會給予角色任何橫向 Y 軸與 X 軸的位移代碼</strong>。
+        <br><br>
+        經資深高手目測實測，合星蹬腿的攻擊距離比少林大一點，在 Hitbox 空間跨度上與 Green Serpent（綠蛇）的電流屏障大體相同。<strong>然而他缺乏綠蛇長達 2 秒的延遲地雷等待機制，他的攻擊判定僅存在於雙腿蹬出的萬分之一秒瞬間，對精準度要求極高。為了補償此一零容錯率的幾何缺陷，系統賦予其 17% 的單發殺傷力（比綠蛇多出 3%）</strong>。但由於該絕招極易被按「下」格擋，一擊揮空便會原地定格陷入僵直死角，使其同樣成為冷宮天梯榜裡的常客。</li>
+</ul>
+<h2 id="why_dragon_fist_is_not_that_famous">美學霸權與現實邏輯的終極對撞：為什麼《龍拳 2》永遠是小眾神作？</h2>
 <p>在流行文化、文學與藝術創作的浩瀚星空中，存在一個顛撲不破的潛規則：<strong>「視覺效果與審美紅利，往往比是否講求現實邏輯更關鍵。」</strong>為了迎合大眾的眼睛，歷史、物理甚至考古學的真相經常被無情扭曲。我們可以用以下三個經典的「美麗謊言」來剖析這套視覺霸權的運作邏輯：</p>
 <ul>
     <li><strong>關羽與青龍偃月刀的「重兵器神話」：</strong><br>在《真·三國無雙》等 3D 割草遊戲或 2.5D 橫向闖關遊戲中，手持巨大青龍刀的關羽總是被塑造成戰力滿點的至高武聖，而戰力低下的雜兵只能手持不起眼的小尺寸武器。這給大眾造成了「青龍偃月刀是實戰神兵且為關羽專屬法器」的集體誤解。然而，任何精通冷兵器操作、物理學轉動慣量或喜好考究歷史的人都能一眼看出，這其實是一個黑色幽默——歷史上的東漢末年根本不存在偃月刀（宋代才出現），且其巨大的轉動慣量在快節奏的剛體對撞中完全是個收招硬直致命的「笑話」。但為了展現符號化的霸氣，現實邏輯只能向視覺效果妥協。</li>
