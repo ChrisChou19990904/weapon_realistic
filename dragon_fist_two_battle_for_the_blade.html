@@ -346,7 +346,7 @@
         <br><br>
         經資深高手目測實測，合星蹬腿的攻擊距離比少林大一點，在 Hitbox 空間跨度上與 Green Serpent（綠蛇）的電流屏障大體相同。<strong>然而他缺乏綠蛇長達 2 秒的延遲地雷等待機制，他的攻擊判定僅存在於雙腿蹬出的萬分之一秒瞬間，對精準度要求極高。為了補償此一零容錯率的幾何缺陷，系統賦予其 17% 的單發殺傷力（比綠蛇多出 3%）</strong>。而在實戰中該絕招極易極易被按「下」格擋，一擊揮空便會原地定格陷入僵直死角，使其同樣成為冷宮天梯榜裡的常客。</li>
 </ul>
-<h2 id="three_hidden_characters">終極禁忌解鎖：三大深層隱藏角色審計與 Plus 版雙人內存崩塌 Bug</h2>
+<h2 id="three_hidden_characters">終極禁忌解鎖：三大深層隱藏角色審計</h2>
 <p>除了通關模式中坐鎮的三大老魔王外，遊戲代碼深處還埋藏了三位不為人知的隱藏角色：<strong>Iron Monkey（鐵猴子）</strong>、<strong>Ice Queen（冰雪女王）</strong> 與 <strong>Fong（阿芳）</strong>。他們永遠不會作為對手出現在任何版本的通關模式中。</p>
 
 <p><strong>經資深高玩在原始版本（Original Version）的最新極限實測證實，系統在 <code>CHEATCODE</code> 欄位內建的字串監聽器存在一個極其滑稽且驚人的「白名單免死金牌漏洞（Cheat-Exemption Bug）」：當玩家在此欄位強行輸入 <code>iamthemaster</code>、<code>lordofdarkness</code>、甚至專屬沙包碼 <code>iamfong</code>，那怕只是手滑隨便打一個字母 <code>p</code>，監聽器都會無條件判定失敗並直接落入反作弊懲罰區，強制將你的自訂名稱沒收覆寫為 <code>cheater</code>。然而，唯獨輸入 <code>icequeen</code> 與 <code>ironmonkey</code> 這兩組代碼時，系統在底層解鎖角色 ID 指針的同時，竟然完全忘記寫入懲罰 Flag！這使得玩家能奇蹟般地在「完全不被判定為 cheater、保留尊姓大名」的合法偷渡狀態下，解鎖這兩位頂級隱藏角色並一路打通原始版本的所有關卡！</strong></p>
