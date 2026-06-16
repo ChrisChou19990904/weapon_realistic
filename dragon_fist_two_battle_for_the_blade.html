@@ -349,7 +349,7 @@
 <h2 id="three_hidden_characters">終極禁忌解鎖：三大深層隱藏角色審計與 Plus 版雙人內存崩塌 Bug</h2>
 <p>除了通關模式中坐鎮的三大老魔王外，遊戲代碼深處還埋藏了三位不為人知的隱藏角色：<strong>Iron Monkey（鐵猴子）</strong>、<strong>Ice Queen（冰雪女王）</strong> 與 <strong>Fong（阿芳）</strong>。他們永遠不會作為對手出現在任何版本的通關模式中。</p>
 
-<p><strong>經資深高玩在原始版本（Original Version）的最新極限實測證實，系統在 <code>CHEATCODE</code> 欄位內建的字串監聽器存在一個極其滑稽且驚人的「白名單免死金牌漏洞（Cheat-Exemption Bug）」：當玩家在此欄位強行輸入 <code>iamthemaster</code>、<code>lordofdarkness</code>、<code>automaticshotgun</code> 等常規密碼，甚至那怕只是手滑隨便打一個字母 <code>p</code>，監聽器都會無條件判定失敗並直接落入反作弊懲罰區，強制將你的自訂名稱沒收覆寫為 <code>cheater</code>。然而，唯獨輸入 <code>icequeen</code> 與 <code>ironmonkey</code> 這兩組代碼時，系統在底層解鎖角色 ID 指針的同時，竟然完全忘記寫入懲罰 Flag！這使得玩家能奇蹟般地在「完全不被判定為 cheater、保留尊姓大名」的合法偷渡狀態下，解鎖這兩位終極隱藏角色並一路打通原始版本的所有關卡！</strong></p>
+<p><strong>經資深高玩在原始版本（Original Version）的最新極限實測證實，系統在 <code>CHEATCODE</code> 欄位內建的字串監聽器存在一個極其滑稽且驚人的「白名單免死金牌漏洞（Cheat-Exemption Bug）」：當玩家在此欄位強行輸入 <code>iamthemaster</code>、<code>lordofdarkness</code>、甚至專屬沙包碼 <code>iamfong</code>，那怕只是手滑隨便打一個字母 <code>p</code>，監聽器都會無條件判定失敗並直接落入反作弊懲罰區，強制將你的自訂名稱沒收覆寫為 <code>cheater</code>。然而，唯獨輸入 <code>icequeen</code> 與 <code>ironmonkey</code> 這兩組代碼時，系統在底層解鎖角色 ID 指針的同時，竟然完全忘記寫入懲罰 Flag！這使得玩家能奇蹟般地在「完全不被判定為 cheater、保留尊姓大名」的合法偷渡狀態下，解鎖這兩位頂級隱藏角色並一路打通原始版本的所有關卡！</strong></p>
 
 <p>以下為資深高玩針對這三位深層隱藏角色的底層物理常數與「武裝強制鎖定（Hard-locked Weapon）」機制的嚴謹審計：</p>
 
@@ -365,6 +365,11 @@
         作弊解鎖碼為 <code>icequeen</code>。她的預設武器被強制鎖定為 Master Kwun 的<strong>短柄大刀</strong>，同樣不允許玩家更換。在美術元件上，<strong>她與 Hidoshi 是相同的「貼皮複用」邏輯，本質上只是將 Red Flower（紅花）的 Movie Clip 元件原封不動地在代碼中更換濾鏡顏色（髮色與衣服變為藍色，但眼睛依舊保留原本魔性的紅色）。</strong>
         <br><br>
         其必殺技屬於第一流派（防禦有效），動作為水平飛行並在空中連續踢擊兩下，視覺軌跡與 Hidoshi 相似，但其移動距離比 Hidoshi 短。<strong>經 Combo 面板逆向代數推導，冰雪女王的第一踢具備 14% 的重創傷害，第二踢具備 13% 的傷害，兩段多段重疊飽和時最大殺傷力高達恐怖的 27%！高玩可利用她免受反作弊系統命名覆寫（不留 cheater 烙印）的代碼特權，手持短柄大刀、利用 27% 的排列組合極限爆發力，完美打穿原始版本的 18 回關卡鏈。</strong> 雖然這招與紅花的原生大招一樣，極度吃雙方腳掌一前一後完美重疊的排列組合運氣，但其輸出期望值遠遠碾壓了 Hidoshi（最高 14%）的刮痧立定跳。</li>
+
+    <li><strong>Fong —— 無必殺技的訓練沙包與直落反作弊懲罰區的冗餘廢柴：</strong> <br>
+        作弊解鎖碼為 <code>iamfong</code>。阿芳本質上是系統內建在「訓練模式（Training Mode）」下供玩家測試 Combo 連擊的沙包角色。<strong>與前兩位享有免死金牌的角色不同，輸入他的代碼 <code>iamfong</code> 會百分之百觸發反作弊覆寫監聽器，將玩家的名字強制變更為 <code>cheater</code>。</strong>
+        <br><br>
+        在代碼封裝中，<strong>官方完全未賦予他任何必殺技（即無法使用任何特殊招式）</strong>，且其預設武器被死死鎖定為<strong>青龍偃月刀</strong>且不允許更換。由於青龍偃月刀在大尺寸武器博弈中存在致命的轉動慣量盲區，揮空即陷入超長定格硬直，且殺傷力與速度低劣，在完全沒有必殺技防身的情況下，阿芳在實戰中的綜合性能甚至比長年被打入冷宮的 Tang Mo Kei（鄧茂基）還要差，是全遊戲底層毫無博弈價值的冗餘代碼。</li>
 </ul>
 <h2 id="bug_in_plus_version">平行宇宙的記憶體崩塌：Plus 版本雙人模式下的肉體置換奇觀</h2>
 <p>在原始版本中，系統的角色陣列映射非常健全。不論在闖關模式、訓練模式還是雙人對決模式中，只要在 <code>CHEATCODE</code> 依序輸入這六組代碼，調用出來的角色均能百分之百精準對應：<code>ironmonkey</code> 載入 Iron Monkey、<code>icequeen</code> 載入 Ice Queen、<code>iamfong</code> 載入 Fong、<code>iamthemaster</code> 載入 Dragon Master、<code>lordofdarkness</code> 載入 Dark Lord、<code>bowbeforme</code> 載入 High Priest。</p>
