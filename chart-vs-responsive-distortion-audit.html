@@ -347,6 +347,13 @@
 
     <div class="analysis-box" style="margin-top: 40px;" id="screen_of_chart.js">
         <h2>🔍 核心數據審計：全專案圖表響應式衝突實證看板</h2>
+        <blockquote style="border-left: 4px solid #f43f5e; padding-left: 15px; color: #64748b; font-style: italic;">
+            <strong>🛠️ 審計幕後秘辛：以 Git 部署生命週期換取的「真實物理鐵證」</strong><br>
+            本報告中所呈現之「🔒 加上 Viewport」崩潰對照組截圖，絕非透過瀏覽器 DevTools 模擬器粗糙產出。
+            為了完美捕捉行動端 RWD 引擎對 Canvas 座標系的真實幾何摧殘，作者於開發期間，刻意將核心 HTML 模板重構、強制塞入 <code>&lt;meta name="viewport"&gt;</code> 標籤，並執行 <code>git commit</code> 與 <code>git push</code>。
+            在耐心地等待 GitHub Actions / Vercel 後台編譯、部署與 CDN 緩存刷新後，肉身使用行動端原生瀏覽器進行像素級螢幕截圖（Snapshot）。
+            於成功固化「Bug 現場數據」後，隨即再度修改代碼、將 Viewport 殘留標籤徹底拔除，重新 Commit 復原主線，以捍衛本專案最初始、最嚴密的笛卡爾幾何尊嚴。這趟反向工程，是本專案對數據尊嚴最硬核的實證代價。
+        </blockquote>
         <p style="font-size: 0.95em; color: var(--text-muted); margin-bottom: 25px;">
             以下矩陣完整收錄了跨領域專案中，不同座標體系（笛卡爾座標系 vs. 極座標系）在手機端原生渲染下的真實物理表現。透過「反響應式鎖定（無 Viewport）」與「標準響應式擠壓（有 Viewport）」的像素級畫面實測，嚴密論證設計主權對數據尊嚴的決定性影響。
         </p>
