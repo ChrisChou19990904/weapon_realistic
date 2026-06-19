@@ -551,8 +551,9 @@
         </ul>
 
         <p style="margin-top: 20px; border-left: 4px solid var(--warning-color); padding-left: 15px; font-style: italic; color: var(--text-muted);">
-            <strong>⚖️ 架構師的權衡 (Trade-off)：</strong><br>
-            資料視覺化沒有萬靈丹。套用盲目的響應式模板，往往是在閹割數據的尊嚴。在面對極高密度的科學考據網頁時，<strong>「刻意移除 Viewport」並引導全端讀者進行自主物理縮放</strong>，才是捍衛數據幾何主權、拒絕系統無效渲染的最硬核防禦。
+            <strong>⚖️ 架構師的權衡 (Trade-off) 與物理實證：</strong><br>
+            資料視覺化沒有萬靈丹。套用盲目的響應式模板，往往是在閹割數據的尊嚴。本報告透過 Git 部署與雙端肉身測試，進一步論證了瀏覽器核心的底層衝突：電腦端的 Page Zoom 僅會放大流式文字而導致固定寬度的截圖排版割裂；而<strong>「刻意移除 Viewport」則能強行激活行動端高 PPI 螢幕的物理紅利，引導全端讀者透過雙指手勢（Pinch-to-zoom）進行無損、超採樣的虛擬畫布放大</strong>。<br><br>
+            這不只是排版選擇，更是捍衛數據幾何主權、拒絕系統無效渲染的最硬核防禦。
         </p>
     </div>
 </div>
